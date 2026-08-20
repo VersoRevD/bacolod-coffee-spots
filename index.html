@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bacolod Coffee Spots</title>
+  <title>Home | Bacolod Coffee Spots</title>
   <style>
     * {
       box-sizing: border-box;
@@ -21,63 +21,46 @@
       background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
                   url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       text-align: center;
-      padding: 80px 20px;
+      padding: 60px 20px 40px;
       border-bottom: 1px solid #333;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       letter-spacing: 2px;
       color: #ffffff;
       text-transform: uppercase;
       margin-bottom: 15px;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #b0b0b0;
-      max-width: 600px;
-      margin: 0 auto;
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    nav a {
+      color: #64b5f6;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     main {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
     }
-    /* Assignment Specific Section */
-    section.about-owner {
-      background-color: #1e1e1e;
-      border: 1px solid #2a2a2a;
-      border-radius: 12px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .tagline {
       text-align: center;
-      gap: 20px;
-      margin-bottom: 40px;
+      font-size: 1.2rem;
+      color: #b0b0b0;
+      margin-bottom: 30px;
     }
-    @media (min-width: 600px) {
-      section.about-owner {
-        flex-direction: row;
-        text-align: left;
-      }
-    }
-    section.about-owner img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #333;
-      flex-shrink: 0;
-    }
-    section.about-owner h2 {
-      color: #ffffff;
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-    section.about-owner p {
-      color: #cccccc;
-    }
-    /* Coffee Spots Showcase */
+    /* Coffee Spots Grid */
     .spots-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -103,76 +86,58 @@
       font-size: 0.95rem;
       color: #bbb;
     }
-    hr {
-      border: 0;
-      height: 1px;
-      background: #333;
-      margin: 40px 0;
-    }
-    /* Activity Links */
-    .activity-section {
+    footer {
       text-align: center;
-    }
-    .activity-section h3 {
-      margin-bottom: 15px;
-      color: #ffffff;
-    }
-    .activity-section a {
-      color: #64b5f6;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .activity-section a:hover {
-      text-decoration: underline;
+      margin-top: 50px;
+      color: #777;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Assignment H1 & Tagline P -->
+  <!-- Shared Semantic Header & Navigation -->
   <header>
     <h1>Bacolod Coffee Spots</h1>
-    <p>A curated guide to the finest brews, cozy study corners, and third-wave roasters in the City of Smiles.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- Main Content Area -->
   <main>
-    <!-- Assignment Target Structure: section > h2 + p + img -->
-    <section class="about-owner">
-      <img src="s.jpg" alt="Profile photo of Vincent Verso">
-      <div>
-        <h2>Vincent Verso</h2>
-        <p>Hi, I'm Vincent! As a student based in Bacolod, I spend a lot of time searching for high-quality espresso, reliable Wi-Fi, and study-friendly cafes around Lacson Street and nearby areas. This guide shares my personal favorite spots across the city.</p>
-      </div>
-    </section>
+    <p class="tagline">A curated guide to the finest brews, cozy study corners, and third-wave roasters in the City of Smiles.</p>
 
-    <!-- Additional Content: Featured Coffee Spots -->
     <h2 style="color: #ffffff; margin-bottom: 15px;">Top Recommended Spots</h2>
     <div class="spots-grid">
-      <div class="spot-card">
+      <article class="spot-card">
         <h3>Lacson Strip Cafes</h3>
         <p class="location">Lacson Street, Bacolod City</p>
         <p>Great spots for late-night study sessions with steady Wi-Fi, ample power outlets, and classic iced lattes.</p>
-      </div>
-      <div class="spot-card">
+      </article>
+
+      <article class="spot-card">
         <h3>Local Third-Wave Roasters</h3>
         <p class="location">Downtown & Shopping Districts</p>
         <p>Perfect for coffee purists looking for single-origin beans, pour-overs, and artisan espresso drinks.</p>
-      </div>
-      <div class="spot-card">
+      </article>
+
+      <article class="spot-card">
         <h3>Cozy Nook Spots</h3>
         <p class="location">Near Campus Hubs</p>
         <p>Quiet, budget-friendly neighborhood spots offering affordable brews and light snacks for students.</p>
-      </div>
-    </div>
-
-    <hr>
-
-    <!-- Activity 3 Link Section -->
-    <div class="activity-section">
-      <h3>Activity Links</h3>
-      <p><a href="https://github.com/versorevd/bacolod-coffee-spots">Activity 3: Bacolod Coffee Spots Repository</a></p>
+      </article>
     </div>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Vincent Rev D. Verso. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
