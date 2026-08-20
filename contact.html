@@ -54,11 +54,6 @@
       margin: 40px auto;
       padding: 0 20px;
     }
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
     .info-card {
       background-color: #1e1e1e;
       border: 1px solid #2a2a2a;
@@ -73,8 +68,8 @@
       padding-bottom: 8px;
     }
     .info-card ul {
-      list-style: none;
-      padding-left: 0;
+      list-style: circle;
+      padding-left: 20px;
     }
     .info-card li {
       margin-bottom: 12px;
@@ -92,7 +87,7 @@
     }
     footer {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
       color: #777;
       font-size: 0.9rem;
     }
@@ -112,32 +107,15 @@
   </header>
 
   <main>
-    <div class="grid-container">
-      
-      <!-- Contact Information -->
-      <section class="info-card">
-        <h2>Get in Touch</h2>
-        <p style="margin-bottom: 15px; color: #bbb;">Know a hidden coffee spot in Bacolod or want to submit your local cafe recommendations? Reach out to us directly:</p>
-        <ul>
-          <li><strong>Email:</strong> <a href="mailto:vincent@example.com">vincent@example.com</a></li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/versorevd">github.com/versorevd</a></li>
-          <li><strong>Instagram:</strong> <a href="#">@bacolodcoffeespots</a></li>
-          <li><strong>Location:</strong> Bacolod City, Negros Occidental, Philippines</li>
-        </ul>
-      </section>
-
-      <!-- Shop Hours & Recommendations Info -->
-      <section class="info-card">
-        <h2>Featured Cafe Hours</h2>
-        <p style="margin-bottom: 15px; color: #bbb;">Most recommended cafes in our guide follow these general operating hours across Bacolod:</p>
-        <ul>
-          <li><strong>Lacson Strip Cafes:</strong> 7:00 AM – 12:00 AM (Daily)</li>
-          <li><strong>Third-Wave Specialty Shops:</strong> 8:00 AM – 9:00 PM (Mon–Sat)</li>
-          <li><strong>Campus Study Nooks:</strong> 8:00 AM – 10:00 PM (Mon–Fri)</li>
-        </ul>
-      </section>
-
-    </div>
+    <section class="info-card">
+      <h2>Get in Touch</h2>
+      <p style="margin-bottom: 15px; color: #bbb;">Have a cafe recommendation or feedback on our guide? Reach out through any of the following methods:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:vincent@example.com">vincent@example.com</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/versorevd">github.com/versorevd</a></li>
+        <li><strong>Location:</strong> Bacolod City, Negros Occidental, Philippines</li>
+      </ul>
+    </section>
   </main>
 
   <footer>
