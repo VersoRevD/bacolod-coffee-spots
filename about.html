@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Bacolod Coffee Spots</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      padding-bottom: 50px;
+    }
+    header {
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+                  url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-bottom: 1px solid #333;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    nav a {
+      color: #64b5f6;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    /* About Owner Section */
+    section.about-owner {
+      background-color: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 600px) {
+      section.about-owner {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+    section.about-owner img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #333;
+      flex-shrink: 0;
+    }
+    section.about-owner h2 {
+      color: #ffffff;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    section.about-owner p {
+      color: #cccccc;
+    }
+    /* Content Cards */
+    .story-card {
+      background-color: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+    .story-card h3 {
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 8px;
+    }
+    .story-card p {
+      color: #bbb;
+      margin-bottom: 12px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bacolod Coffee Spots</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Assignment Target Structure -->
+    <section class="about-owner">
+      <img src="s.jpg" alt="Profile photo of Vincent Verso">
+      <div>
+        <h2>Vincent Verso</h2>
+        <p>Hi, I'm Vincent! As a student based in Bacolod, I spend a lot of time searching for high-quality espresso, reliable Wi-Fi, and study-friendly cafes around Lacson Street and nearby areas.</p>
+      </div>
+    </section>
+
+    <!-- Expanded Coffee Story & Sourcing -->
+    <div class="story-card">
+      <h3>Our Story</h3>
+      <p>Bacolod Coffee Spots started as a personal logbook of coffee runs during busy exam seasons. Finding the right blend of quiet atmosphere, stable internet, and great specialty coffee can be tough, so this platform was created to catalog the absolute best coffee destinations across the City of Smiles.</p>
+      <p>From cozy neighborhood nooks near university campuses to bustling third-wave roasters on Lacson Street, every spot featured is selected based on craft quality, local vibe, and hospitality.</p>
+    </div>
+
+    <div class="story-card">
+      <h3>Local Bean Sourcing & Culture</h3>
+      <p>We take pride in promoting local Negrense coffee heritage. Many featured shops source their single-origin beans directly from high-altitude farms across Mt. Kanlaon and neighboring regions in Negros Occidental.</p>
+      <p>Whether you prefer traditional Robusta-Arabica blends or modern light roast pour-overs, this guide aims to showcase the rich, evolving coffee culture in Bacolod City.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Vincent Rev D. Verso. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
