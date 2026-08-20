@@ -60,31 +60,78 @@
       color: #b0b0b0;
       margin-bottom: 30px;
     }
-    /* Coffee Spots Grid */
-    .spots-grid {
+    /* About Me Section */
+    section.about-owner {
+      background-color: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 600px) {
+      section.about-owner {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+    section.about-owner img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #333;
+      flex-shrink: 0;
+    }
+    section.about-owner h2 {
+      color: #ffffff;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    section.about-owner p {
+      color: #cccccc;
+    }
+    /* Places Cards Grid */
+    .places-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       margin-top: 20px;
     }
-    .spot-card {
+    .place-card {
       background-color: #1e1e1e;
       border: 1px solid #2a2a2a;
       border-radius: 10px;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .spot-card h3 {
+    .place-card h3 {
       color: #ffffff;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
-    .spot-card .location {
+    .place-card .category {
       font-size: 0.85rem;
-      color: #888;
+      color: #64b5f6;
+      font-weight: bold;
       margin-bottom: 10px;
     }
-    .spot-card p {
+    .place-card .description {
       font-size: 0.95rem;
       color: #bbb;
+      margin-bottom: 15px;
+    }
+    .place-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-top: auto;
     }
     footer {
       text-align: center;
@@ -96,7 +143,7 @@
 </head>
 <body>
 
-  <!-- Shared Semantic Header & Navigation -->
+  <!-- Header and Navigation -->
   <header>
     <h1>Bacolod Coffee Spots</h1>
     <nav>
@@ -108,33 +155,50 @@
     </nav>
   </header>
 
-  <!-- Main Content Area -->
   <main>
+    <!-- Tagline -->
     <p class="tagline">A curated guide to the finest brews, cozy study corners, and third-wave roasters in the City of Smiles.</p>
 
-    <h2 style="color: #ffffff; margin-bottom: 15px;">Top Recommended Spots</h2>
-    <div class="spots-grid">
-      <article class="spot-card">
-        <h3>Lacson Strip Cafes</h3>
-        <p class="location">Lacson Street, Bacolod City</p>
-        <p>Great spots for late-night study sessions with steady Wi-Fi, ample power outlets, and classic iced lattes.</p>
+    <!-- About Me Section -->
+    <section class="about-owner">
+      <img src="s.jpg" alt="Profile photo of Vincent Verso">
+      <div>
+        <h2>Vincent Verso</h2>
+        <p>Hi, I'm Vincent! As a student based in Bacolod, I spend a lot of time searching for high-quality espresso, reliable Wi-Fi, and study-friendly cafes around Lacson Street and nearby areas.</p>
+      </div>
+    </section>
+
+    <!-- My Top Picks Section -->
+    <h2 style="color: #ffffff; margin-bottom: 15px;">My Top Picks</h2>
+    <div class="places-grid">
+      
+      <!-- Place 1 -->
+      <article class="place-card">
+        <h3>Origami Coffee Co.</h3>
+        <p class="category">Lacson Street, Bacolod City</p>
+        <p class="description">I highly recommend this spot for its smooth pour-over coffees, minimal modern interior, and quiet atmosphere that makes studying super easy.</p>
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Interior view of Origami Coffee Co. with warm lighting and wooden tables">
       </article>
 
-      <article class="spot-card">
-        <h3>Local Third-Wave Roasters</h3>
-        <p class="location">Downtown & Shopping Districts</p>
-        <p>Perfect for coffee purists looking for single-origin beans, pour-overs, and artisan espresso drinks.</p>
+      <!-- Place 2 -->
+      <article class="place-card">
+        <h3>Coffee Culture Roastery</h3>
+        <p class="category">Shopping District, Bacolod City</p>
+        <p class="description">My top pick for local artisan coffee. They roast single-origin Negrense coffee beans and serve incredible cold brews.</p>
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Fresh cup of pour-over coffee served next to roasted coffee beans">
       </article>
 
-      <article class="spot-card">
-        <h3>Cozy Nook Spots</h3>
-        <p class="location">Near Campus Hubs</p>
-        <p>Quiet, budget-friendly neighborhood spots offering affordable brews and light snacks for students.</p>
+      <!-- Place 3 -->
+      <article class="place-card">
+        <h3>KnooN Cafe</h3>
+        <p class="category">Near Campus Hubs</p>
+        <p class="description">A budget-friendly favorite for students with fast Wi-Fi, plenty of electrical outlets, and great iced Spanish lattes.</p>
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Cozy cafe atmosphere with laptop workspace on a dark wooden desk">
       </article>
+
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Vincent Rev D. Verso. All rights reserved.</p>
   </footer>
