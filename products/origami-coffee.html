@@ -11,99 +11,108 @@
       padding: 0;
     }
     body {
-      background-color: #121212;
-      color: #e0e0e0;
+      background-color: #0f1115;
+      color: #e2e8f0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
-      padding-bottom: 50px;
+      padding-bottom: 60px;
     }
     header {
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+      background: linear-gradient(rgba(15, 17, 21, 0.8), rgba(15, 17, 21, 0.95)), 
                   url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       text-align: center;
-      padding: 60px 20px 40px;
-      border-bottom: 1px solid #333;
+      padding: 70px 20px 50px;
+      border-bottom: 1px solid #222734;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       letter-spacing: 2px;
       color: #ffffff;
       text-transform: uppercase;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
+      font-weight: 800;
     }
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       margin-top: 15px;
     }
     nav a {
-      color: #64b5f6;
+      color: #60a5fa;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       text-transform: uppercase;
       font-size: 0.9rem;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      transition: color 0.2s ease-in-out;
     }
     nav a:hover {
+      color: #93c5fd;
       text-decoration: underline;
     }
     main {
-      max-width: 800px;
+      max-width: 850px;
       margin: 40px auto;
       padding: 0 20px;
     }
     .hero-img {
       width: 100%;
-      max-height: 400px;
+      max-height: 420px;
       object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 25px;
-      border: 1px solid #333;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      border: 1px solid #222734;
     }
     .description {
-      font-size: 1.05rem;
-      color: #ccc;
-      margin-bottom: 30px;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 35px;
+      background-color: #171b24;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #222734;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
-      background-color: #1e1e1e;
-      border-radius: 8px;
+      margin-top: 15px;
+      background-color: #171b24;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #2a2a2a;
+      border: 1px solid #222734;
     }
     th, td {
-      padding: 12px 16px;
+      padding: 14px 18px;
       text-align: left;
-      border-bottom: 1px solid #2a2a2a;
+      border-bottom: 1px solid #222734;
     }
     th {
-      background-color: #252525;
+      background-color: #1f2430;
       color: #ffffff;
-      font-weight: bold;
+      font-weight: 700;
       width: 35%;
     }
     td {
-      color: #bbb;
+      color: #cbd5e1;
     }
     tr:last-child th, tr:last-child td {
       border-bottom: none;
     }
     footer {
       text-align: center;
-      margin-top: 50px;
-      color: #777;
+      margin-top: 60px;
+      color: #64748b;
       font-size: 0.9rem;
+      border-top: 1px solid #1e293b;
+      padding-top: 30px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Shared Nav using Relative Parent Paths (../) -->
+  <!-- Nav links using ../ parent directory relative path -->
   <header>
     <h1>Origami Coffee Co.</h1>
     <nav>
@@ -118,12 +127,12 @@
   <main>
     <img class="hero-img" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" alt="Detailed interior view of Origami Coffee Co. with wooden bar counter and coffee brewing equipment">
 
-    <h2 style="color: #ffffff; margin-bottom: 10px;">About This Spot</h2>
+    <h2 style="color: #ffffff; margin-bottom: 15px; font-size: 1.5rem;">About This Spot</h2>
     <p class="description">
       Origami Coffee Co. is a premier Japanese-inspired specialty coffee shop located along Lacson Street. Known for its precise pour-over brewing methods and minimalist aesthetic, it provides an ideal environment for focused study sessions, reading, or quiet conversations. They serve single-origin beans sourced from local and international roasters, paired with light Japanese pastries.
     </p>
 
-    <h2 style="color: #ffffff; margin-bottom: 10px;">Spot Details & Specs</h2>
+    <h2 style="color: #ffffff; margin-bottom: 15px; font-size: 1.5rem;">Spot Details & Specs</h2>
     <table>
       <tr>
         <th>Location</th>
