@@ -97,6 +97,16 @@
       border-radius: 6px;
       margin-top: auto;
     }
+    .details-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: #64b5f6;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .details-link:hover {
+      text-decoration: underline;
+    }
     footer {
       text-align: center;
       margin-top: 50px;
@@ -124,24 +134,32 @@
     <h2 style="color: #ffffff; margin-bottom: 15px;">My Top Picks</h2>
     <div class="places-grid">
       
+      <!-- Origami Coffee Co. with Details Link -->
       <article class="place-card">
-        <h3>Origami Coffee Co.</h3>
-        <p class="category">Lacson Street, Bacolod City</p>
-        <p class="description">I highly recommend this spot for its smooth pour-over coffees, minimal modern interior, and quiet atmosphere that makes studying super easy.</p>
+        <div>
+          <h3>Origami Coffee Co.</h3>
+          <p class="category">Lacson Street, Bacolod City</p>
+          <p class="description">I highly recommend this spot for its smooth pour-over coffees, minimal modern interior, and quiet atmosphere that makes studying super easy.</p>
+        </div>
         <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Interior view of Origami Coffee Co. with warm lighting and wooden tables">
+        <a class="details-link" href="products/origami-coffee.html">View details &rarr;</a>
       </article>
 
       <article class="place-card">
-        <h3>Coffee Culture Roastery</h3>
-        <p class="category">Shopping District, Bacolod City</p>
-        <p class="description">My top pick for local artisan coffee. They roast single-origin Negrense coffee beans and serve incredible cold brews.</p>
+        <div>
+          <h3>Coffee Culture Roastery</h3>
+          <p class="category">Shopping District, Bacolod City</p>
+          <p class="description">My top pick for local artisan coffee. They roast single-origin Negrense coffee beans and serve incredible cold brews.</p>
+        </div>
         <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Fresh cup of pour-over coffee served next to roasted coffee beans">
       </article>
 
       <article class="place-card">
-        <h3>KnooN Cafe</h3>
-        <p class="category">Near Campus Hubs</p>
-        <p class="description">A budget-friendly favorite for students with fast Wi-Fi, plenty of electrical outlets, and great iced Spanish lattes.</p>
+        <div>
+          <h3>KnooN Cafe</h3>
+          <p class="category">Near Campus Hubs</p>
+          <p class="description">A budget-friendly favorite for students with fast Wi-Fi, plenty of electrical outlets, and great iced Spanish lattes.</p>
+        </div>
         <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Cozy cafe atmosphere with laptop workspace on a dark wooden desk">
       </article>
 
