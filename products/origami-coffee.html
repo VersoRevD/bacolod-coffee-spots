@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Origami Coffee Dripper | Bacolod Coffee Spots</title>
+  <title>Origami Coffee | Bacolod Coffee Spots</title>
   <style>
     * {
       box-sizing: border-box;
@@ -58,31 +58,36 @@
       padding: 0 20px;
     }
     
-    /* Product Info Styling */
-    .product-card {
+    /* Place Details Card */
+    .place-card {
       background-color: #171b24;
       border: 1px solid #222734;
       border-radius: 12px;
       padding: 30px;
       margin-bottom: 40px;
     }
-    .product-card h2 {
+    .place-card h2 {
       color: #ffffff;
       font-size: 1.8rem;
       margin-bottom: 10px;
     }
-    .price {
-      font-size: 1.4rem;
-      color: #60a5fa;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-    .product-card p {
+    .place-card p {
       color: #cbd5e1;
       margin-bottom: 15px;
     }
+    .tag {
+      display: inline-block;
+      background-color: #1e293b;
+      color: #60a5fa;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      border: 1px solid #334155;
+    }
 
-    /* Order Enquiry Form Styling */
+    /* Suggest-a-Place Form Styling */
     form {
       background-color: #171b24;
       border: 1px solid #222734;
@@ -121,9 +126,8 @@
     }
     
     /* Input Styling */
-    input[type="number"],
-    input[type="email"],
-    textarea {
+    input[type="text"],
+    input[type="email"] {
       width: 100%;
       padding: 12px;
       background-color: #0f1115;
@@ -133,7 +137,7 @@
       font-size: 1rem;
       font-family: inherit;
     }
-    input:focus, textarea:focus {
+    input:focus {
       outline: 2px solid #3b82f6;
     }
 
@@ -188,7 +192,7 @@
 
   <header>
     <h1>Bacolod Coffee Spots</h1>
-    <!-- Relative paths using ../ because file is inside /products/ -->
+    <!-- Navigation using ../ relative paths -->
     <nav>
       <ul>
         <li><a href="../index.html">Home</a></li>
@@ -199,72 +203,71 @@
   </header>
 
   <main>
-    <!-- Product Detail Section -->
-    <section class="product-card">
-      <h2>Origami Coffee Dripper</h2>
-      <div class="price">₱1,250.00</div>
-      <p>Crafted from high-grade ceramic with 20 vertical grooves that provide control over pour speed. Compatible with both wave and cone filters.</p>
+    <!-- Existing Place Detail Section -->
+    <section class="place-card">
+      <span class="tag">Specialty Cafe & Study Hub</span>
+      <h2>Origami Coffee</h2>
+      <p>A minimalist specialty coffee shop known for precision pour-overs, quiet study corners, and high-speed Wi-Fi located right in the heart of Bacolod City.</p>
     </section>
 
-    <!-- Order Enquiry Form -->
+    <!-- Suggest-a-Place Form -->
     <form action="#" method="post">
-      <h3>Order Enquiry</h3>
+      <h3>Suggest a Place for Our Guide</h3>
 
-      <!-- Quantity: number input min 1, max 20 -->
+      <!-- Place Name: Required text input -->
       <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" required>
+        <label for="place_name">Place Name</label>
+        <input type="text" id="place_name" name="place_name" placeholder="e.g. Daily Grind Cafe" required>
       </div>
 
-      <!-- Delivery Method: Radio buttons inside fieldset/legend -->
+      <!-- Category: Radio buttons (1 choice) sharing name="category" inside fieldset/legend -->
       <fieldset>
-        <legend>Delivery Method</legend>
+        <legend>Category</legend>
 
-        <label for="delivery-standard" class="option-label">
-          <input type="radio" id="delivery-standard" name="delivery_method" value="standard" checked>
-          Standard Delivery (3-5 Days)
+        <label for="cat-cafe" class="option-label">
+          <input type="radio" id="cat-cafe" name="category" value="cafe" checked>
+          Coffee Shop / Cafe
         </label>
 
-        <label for="delivery-express" class="option-label">
-          <input type="radio" id="delivery-express" name="delivery_method" value="express">
-          Express Courier (Next Day)
+        <label for="cat-study" class="option-label">
+          <input type="radio" id="cat-study" name="category" value="study-spot">
+          Study / Coworking Spot
         </label>
 
-        <label for="delivery-pickup" class="option-label">
-          <input type="radio" id="delivery-pickup" name="delivery_method" value="pickup">
-          Local Store Pick-up
+        <label for="cat-outdoor" class="option-label">
+          <input type="radio" id="cat-outdoor" name="category" value="outdoors">
+          Outdoor / Garden Spot
         </label>
       </fieldset>
 
-      <!-- Optional Extras: Checkboxes inside fieldset/legend -->
+      <!-- What's Good About It: Checkboxes (multiple choices) sharing name="good_points" inside fieldset/legend -->
       <fieldset>
-        <legend>Optional Extras</legend>
+        <legend>What's good about it?</legend>
 
-        <label for="extra-gift" class="option-label">
-          <input type="radio" style="display:none;" /> <!-- standard layout fix -->
-          <input type="checkbox" id="extra-gift" name="extras" value="gift-wrapping">
-          Gift Wrapping (+₱50)
+        <label for="good-wifi" class="option-label">
+          <input type="checkbox" id="good-wifi" name="good_points" value="fast-wifi">
+          Fast & Reliable Wi-Fi
         </label>
 
-        <label for="extra-filters" class="option-label">
-          <input type="checkbox" id="extra-filters" name="extras" value="filter-papers">
-          Include 100x Cone Paper Filters (+₱250)
+        <label for="good-price" class="option-label">
+          <input type="checkbox" id="good-price" name="good_points" value="affordable">
+          Affordable Prices
         </label>
 
-        <label for="extra-beans" class="option-label">
-          <input type="checkbox" id="extra-beans" name="extras" value="sample-beans">
-          Add 100g Sample Espresso Beans (+₱180)
+        <label for="good-quiet" class="option-label">
+          <input type="checkbox" id="good-quiet" name="good_points" value="quiet-environment">
+          Quiet Environment
         </label>
       </fieldset>
 
-      <!-- Contact Email -->
+      <!-- Contact Email: Required type="email" -->
       <div class="form-group">
         <label for="email">Contact Email</label>
         <input type="email" id="email" name="email" placeholder="name@example.com" required>
       </div>
 
       <!-- Submit Button -->
-      <button type="submit">Submit order enquiry</button>
+      <button type="submit">Submit suggestion</button>
     </form>
   </main>
 
