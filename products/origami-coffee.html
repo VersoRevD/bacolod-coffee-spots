@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Origami Coffee Co. | Details</title>
+  <title>Origami Coffee Dripper | Bacolod Coffee Spots</title>
   <style>
     * {
       box-sizing: border-box;
@@ -21,11 +21,11 @@
       background: linear-gradient(rgba(15, 17, 21, 0.8), rgba(15, 17, 21, 0.95)), 
                   url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       text-align: center;
-      padding: 70px 20px 50px;
+      padding: 60px 20px 40px;
       border-bottom: 1px solid #222734;
     }
     header h1 {
-      font-size: 2.75rem;
+      font-size: 2.5rem;
       letter-spacing: 2px;
       color: #ffffff;
       text-transform: uppercase;
@@ -53,53 +53,127 @@
       text-decoration: underline;
     }
     main {
-      max-width: 850px;
+      max-width: 800px;
       margin: 40px auto;
       padding: 0 20px;
     }
-    .hero-img {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 30px;
-      border: 1px solid #222734;
-    }
-    .description {
-      font-size: 1.1rem;
-      color: #cbd5e1;
-      margin-bottom: 35px;
+    
+    /* Product Info Styling */
+    .product-card {
       background-color: #171b24;
-      padding: 24px;
-      border-radius: 12px;
       border: 1px solid #222734;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-      background-color: #171b24;
       border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #222734;
+      padding: 30px;
+      margin-bottom: 40px;
     }
-    th, td {
-      padding: 14px 18px;
-      text-align: left;
-      border-bottom: 1px solid #222734;
-    }
-    th {
-      background-color: #1f2430;
+    .product-card h2 {
       color: #ffffff;
-      font-weight: 700;
-      width: 35%;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
     }
-    td {
+    .price {
+      font-size: 1.4rem;
+      color: #60a5fa;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .product-card p {
+      color: #cbd5e1;
+      margin-bottom: 15px;
+    }
+
+    /* Order Enquiry Form Styling */
+    form {
+      background-color: #171b24;
+      border: 1px solid #222734;
+      border-radius: 12px;
+      padding: 30px;
+    }
+    form h3 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #222734;
+      padding-bottom: 10px;
+    }
+    fieldset {
+      border: 1px solid #222734;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 22px;
+    }
+    legend {
+      color: #60a5fa;
+      font-weight: 700;
+      padding: 0 8px;
+      font-size: 1rem;
+    }
+    .form-group {
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      color: #f1f5f9;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    
+    /* Input Styling */
+    input[type="number"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      background-color: #0f1115;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      color: #ffffff;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid #3b82f6;
+    }
+
+    /* Radio & Checkbox Label Layouts */
+    .option-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      cursor: pointer;
       color: #cbd5e1;
     }
-    tr:last-child th, tr:last-child td {
-      border-bottom: none;
+    .option-label:last-child {
+      margin-bottom: 0;
     }
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #2563eb;
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      background-color: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.2s ease;
+    }
+    button[type="submit"]:hover {
+      background-color: #1d4ed8;
+    }
+
     footer {
       text-align: center;
       margin-top: 60px;
@@ -112,9 +186,9 @@
 </head>
 <body>
 
-  <!-- Nav links using relative parent paths (../) -->
   <header>
-    <h1>Origami Coffee Co.</h1>
+    <h1>Bacolod Coffee Spots</h1>
+    <!-- Relative paths using ../ because file is inside /products/ -->
     <nav>
       <ul>
         <li><a href="../index.html">Home</a></li>
@@ -125,40 +199,73 @@
   </header>
 
   <main>
-    <img class="hero-img" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80" alt="Detailed interior view of Origami Coffee Co. with wooden bar counter and coffee brewing equipment">
+    <!-- Product Detail Section -->
+    <section class="product-card">
+      <h2>Origami Coffee Dripper</h2>
+      <div class="price">₱1,250.00</div>
+      <p>Crafted from high-grade ceramic with 20 vertical grooves that provide control over pour speed. Compatible with both wave and cone filters.</p>
+    </section>
 
-    <h2 style="color: #ffffff; margin-bottom: 15px; font-size: 1.5rem;">Why I Recommend It</h2>
-    <p class="description">
-      Origami Coffee Co. is a premier Japanese-inspired specialty coffee shop located along Lacson Street. Known for its precise pour-over brewing methods and minimalist aesthetic, it provides an ideal environment for focused study sessions, reading, or quiet conversations. They serve single-origin beans sourced from local and international roasters, paired with light Japanese pastries.
-    </p>
+    <!-- Order Enquiry Form -->
+    <form action="#" method="post">
+      <h3>Order Enquiry</h3>
 
-    <h2 style="color: #ffffff; margin-bottom: 15px; font-size: 1.5rem;">Place Details & Specs</h2>
-    <table>
-      <tr>
-        <th>Address</th>
-        <td>Lacson Street, Bacolod City, Negros Occidental</td>
-      </tr>
-      <tr>
-        <th>Opening Hours</th>
-        <td>8:00 AM – 10:00 PM Daily</td>
-      </tr>
-      <tr>
-        <th>Price Range</th>
-        <td>₱120 – ₱220</td>
-      </tr>
-      <tr>
-        <th>Best Time to Visit</th>
-        <td>2:00 PM – 5:00 PM (Quiet study hours)</td>
-      </tr>
-      <tr>
-        <th>Signature Item</th>
-        <td>Hand Drip Pour-Over (Single-Origin Arabica)</td>
-      </tr>
-      <tr>
-        <th>Amenities</th>
-        <td>High-Speed Fiber Wi-Fi & Power Outlets Available</td>
-      </tr>
-    </table>
+      <!-- Quantity: number input min 1, max 20 -->
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" required>
+      </div>
+
+      <!-- Delivery Method: Radio buttons inside fieldset/legend -->
+      <fieldset>
+        <legend>Delivery Method</legend>
+
+        <label for="delivery-standard" class="option-label">
+          <input type="radio" id="delivery-standard" name="delivery_method" value="standard" checked>
+          Standard Delivery (3-5 Days)
+        </label>
+
+        <label for="delivery-express" class="option-label">
+          <input type="radio" id="delivery-express" name="delivery_method" value="express">
+          Express Courier (Next Day)
+        </label>
+
+        <label for="delivery-pickup" class="option-label">
+          <input type="radio" id="delivery-pickup" name="delivery_method" value="pickup">
+          Local Store Pick-up
+        </label>
+      </fieldset>
+
+      <!-- Optional Extras: Checkboxes inside fieldset/legend -->
+      <fieldset>
+        <legend>Optional Extras</legend>
+
+        <label for="extra-gift" class="option-label">
+          <input type="radio" style="display:none;" /> <!-- standard layout fix -->
+          <input type="checkbox" id="extra-gift" name="extras" value="gift-wrapping">
+          Gift Wrapping (+₱50)
+        </label>
+
+        <label for="extra-filters" class="option-label">
+          <input type="checkbox" id="extra-filters" name="extras" value="filter-papers">
+          Include 100x Cone Paper Filters (+₱250)
+        </label>
+
+        <label for="extra-beans" class="option-label">
+          <input type="checkbox" id="extra-beans" name="extras" value="sample-beans">
+          Add 100g Sample Espresso Beans (+₱180)
+        </label>
+      </fieldset>
+
+      <!-- Contact Email -->
+      <div class="form-group">
+        <label for="email">Contact Email</label>
+        <input type="email" id="email" name="email" placeholder="name@example.com" required>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit order enquiry</button>
+    </form>
   </main>
 
   <footer>
