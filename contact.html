@@ -3,35 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with the author of Bacolod Coffee Spots.">
   <title>Contact | Bacolod Coffee Spots</title>
-  <!-- Link to central stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <h1>Bacolod Coffee Spots</h1>
-    <nav>
+    <nav aria-label="Main Navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <form action="#" method="post">
-      <h2 style="color: #ffffff; margin-bottom: 20px;">Get in Touch</h2>
+    <form action="#" method="post" aria-labelledby="form-title">
+      <h2 id="form-title" style="color: #ffffff; margin-bottom: 20px;">Get in Touch</h2>
 
       <div class="form-group">
         <label for="contact-name">Your Name</label>
-        <input type="text" id="contact-name" name="name" placeholder="Vincent Verso" required>
+        <input type="text" id="contact-name" name="name" placeholder="Vincent Verso" autocomplete="name" required>
       </div>
 
       <div class="form-group">
         <label for="contact-email">Your Email Address</label>
-        <input type="email" id="contact-email" name="email" placeholder="name@example.com" required>
+        <input type="email" id="contact-email" name="email" placeholder="name@example.com" autocomplete="email" required>
       </div>
 
       <div class="form-group">
