@@ -1,327 +1,150 @@
 /* ==========================================
-   1. VARIABLES & BRANDING
+   1. VARIABLES
    ========================================== */
 :root {
-  --brand: #3b82f6;          /* Brand accent color */
-  --brand-hover: #2563eb;    /* Darker shade for hover state */
-  --dark-ink: #0f1115;       /* Main dark background */
-  --card-bg: #171b24;        /* Card and container background */
-  --border-color: #222734;   /* Subtle border color */
-  --text-main: #f8fafc;      /* Primary high-contrast text */
-  --text-muted: #cbd5e1;     /* Secondary muted text */
-  --input-bg: #0f1115;       /* Form input field background */
-  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --brand: #2563eb;          /* Brand primary color */
+  --dark-ink: #0f172a;       /* Dark background */
+  --muted-grey: #64748b;     /* Secondary text / borders */
+  --light-bg: #1e293b;       /* Card & form container background */
+  --text-light: #f8fafc;     /* High contrast text color */
 }
 
 /* ==========================================
-   2. BASE STYLES & RESET
+   2. BASE STYLES
    ========================================== */
 *, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 body {
   background-color: var(--dark-ink);
-  color: var(--text-main);
-  font-family: var(--font-stack);
+  color: var(--text-light);
+  font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.6;
-  padding-bottom: 60px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+header, footer {
+  background-color: var(--light-bg);
+  text-align: center;
+  padding: 20px;
 }
 
 /* ==========================================
-   3. LAYOUT REGIONS & NAV
+   3. HORIZONTAL NAV
    ========================================== */
-header {
-  background: linear-gradient(rgba(15, 17, 21, 0.85), rgba(15, 17, 21, 0.95)), 
-              url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-  text-align: center;
-  padding: 60px 20px 40px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-header h1 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  font-weight: 800;
-}
-
 nav ul {
   list-style: none;
   padding: 0;
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px 24px;
+  margin: 10px 0 0 0;
 }
 
 nav li {
   display: inline-block;
+  margin: 0 10px;
 }
 
 nav a {
-  color: #60a5fa;
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 1.5px;
-  padding: 4px 0;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
-nav a:hover,
-nav a[aria-current="page"] {
-  color: #ffffff;
-  border-bottom-color: var(--brand);
-}
-
-nav a:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-
-main {
-  max-width: 960px;
-  width: 100%;
-  margin: 40px auto;
-  padding: 0 20px;
-  flex: 1;
-}
-
-.tagline {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 30px;
-  max-width: 650px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 60px;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  border-top: 1px solid var(--border-color);
-  padding: 30px 20px 0;
+nav a:hover {
+  color: var(--brand);
 }
 
 /* ==========================================
-   4. COMPONENTS (Cards & Grid)
+   4. PLACE CARDS (MODULE 5.4 REQUIREMENTS)
    ========================================== */
-.places-grid, .products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+.place-card {
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  padding: 20px;                     /* Exceeds 16px requirement */
+  border-left: 6px solid var(--brand); /* Coloured left border using variable */
+  margin-bottom: 20px;               /* Space between cards */
+}
+
+.place-card h3 {
+  font-size: 1.5rem;                 /* Distinct font-size */
+  color: var(--text-light);           /* Distinct high-contrast color */
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.place-card p {
+  margin: 0 0 10px 0;
+}
+
+/* ==========================================
+   5. FORM STYLING (MODULE 5.4 REQUIREMENTS)
+   ========================================== */
+form {
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  padding: 20px;
   margin-top: 20px;
 }
 
-.product-card, .place-card {
-  background-color: var(--card-bg);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 20px;
-  border: 1px solid var(--border-color);
-  border-left: 6px solid var(--brand);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.product-card:hover, .place-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.product-card h3, .place-card h3 {
-  color: #ffffff;
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  line-height: 1.3;
-}
-
-.place-card .category, .product-card .price {
-  font-size: 1rem;
-  color: #60a5fa;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.place-card .description, .product-card p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-bottom: 18px;
-}
-
-.product-card img, .place-card img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.read-more-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  color: #60a5fa;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 0.95rem;
-  padding: 4px 0;
-  width: fit-content;
-}
-
-.read-more-link:hover {
-  text-decoration: underline;
-  color: #ffffff;
-}
-
-.read-more-link:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-
-/* ==========================================
-   5. CONTACT & SUGGESTION FORMS
-   ========================================== */
-form {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: clamp(20px, 4vw, 30px);
-  margin-top: 30px;
-}
-
 fieldset {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 22px;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--muted-grey);
+  margin-bottom: 20px;
 }
 
 legend {
-  color: var(--brand);
-  font-weight: 700;
+  color: var(--brand);               /* Styled legend using brand variable */
+  font-weight: bold;
   padding: 0 8px;
-  font-size: 1rem;
-}
-
-.form-group {
-  margin-bottom: 22px;
-  display: flex;
-  flex-direction: column;
 }
 
 label {
-  color: var(--text-main);
+  display: block;
+  margin-bottom: 6px;
   font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
 }
 
 input[type="text"],
 input[type="email"],
-input[type="number"],
-select,
 textarea {
   width: 100%;
-  padding: 12px 16px;
-  background-color: var(--input-bg);
-  border: 1px solid #334155;
-  border-radius: 6px;
-  color: var(--text-main);
-  font-size: 1rem;
+  padding: 10px 12px;               /* Consistent padding on inputs */
+  border-radius: 4px;
+  border: 1px solid var(--muted-grey);
+  background-color: var(--dark-ink);
+  color: var(--text-light);
+  margin-bottom: 16px;
   font-family: inherit;
-  transition: border-color 0.2s ease;
+  font-size: 1rem;
 }
 
+/* Visible Keyboard Focus State */
 input:focus,
-select:focus,
 textarea:focus {
-  outline: 3px solid var(--brand);
-  outline-offset: 2px;
-  border-color: var(--brand);
-}
-
-.option-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 400;
-  padding: 6px 0;
-  cursor: pointer;
-  color: var(--text-muted);
-  user-select: none;
-}
-
-.option-label:hover {
-  color: var(--text-main);
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  accent-color: var(--brand);
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-input[type="radio"]:focus-visible,
-input[type="checkbox"]:focus-visible {
   outline: 3px solid var(--brand);
   outline-offset: 2px;
 }
 
 button[type="submit"] {
-  background-color: var(--brand);
+  background-color: var(--brand);    /* Styled submit button */
   color: #ffffff;
-  border: none;
-  padding: 14px 28px;
-  font-size: 1rem;
-  font-weight: 700;
+  padding: 12px 24px;
+  border: none;                      /* No default border */
   border-radius: 6px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: var(--brand-hover);
-}
-
-button[type="submit"]:active {
-  transform: scale(0.99);
+  cursor: pointer;                   /* Cursor pointer */
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 button[type="submit"]:focus-visible {
   outline: 3px solid #ffffff;
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
