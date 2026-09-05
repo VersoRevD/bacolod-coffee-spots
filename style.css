@@ -1,0 +1,215 @@
+/* ==========================================
+   1. VARIABLES
+   ========================================== */
+:root {
+  --brand-color: #3b82f6;
+  --brand-hover: #60a5fa;
+  --dark-ink: #0f1115;
+  --card-bg: #171b24;
+  --border-color: #222734;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --input-bg: #0f1115;
+}
+
+/* ==========================================
+   2. BASE STYLES
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark-ink);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  padding-bottom: 60px;
+}
+
+/* ==========================================
+   3. LAYOUT REGIONS
+   ========================================== */
+header {
+  background: linear-gradient(rgba(15, 17, 21, 0.8), rgba(15, 17, 21, 0.95)), 
+              url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  text-align: center;
+  padding: 60px 20px 40px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+/* Navigation Bar */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+nav a {
+  color: var(--brand-hover);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 30px;
+}
+
+/* ==========================================
+   4. COMPONENTS & CARDS
+   ========================================== */
+.places-grid, .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.product-card, .place-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.product-card:hover, .place-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-color);
+}
+
+.product-card h3, .place-card h3 {
+  color: #ffffff;
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 1.25rem;
+  color: var(--brand-hover);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.product-card img, .place-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.read-more-link {
+  display: inline-block;
+  margin-top: auto;
+  color: var(--brand-hover);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
+
+/* Forms */
+form {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+legend {
+  color: var(--brand-hover);
+  font-weight: 700;
+  padding: 0 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--input-bg);
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  background-color: var(--brand-color);
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #2563eb;
+}
