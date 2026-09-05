@@ -4,133 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Bacolod Coffee Spots</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background-color: #0f1115;
-      color: #e2e8f0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      padding-bottom: 60px;
-    }
-    header {
-      background: linear-gradient(rgba(15, 17, 21, 0.8), rgba(15, 17, 21, 0.95)), 
-                  url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      text-align: center;
-      padding: 70px 20px 50px;
-      border-bottom: 1px solid #222734;
-    }
-    header h1 {
-      font-size: 2.75rem;
-      letter-spacing: 2px;
-      color: #ffffff;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      font-weight: 800;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 15px;
-    }
-    nav a {
-      color: #60a5fa;
-      text-decoration: none;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      letter-spacing: 1.5px;
-      transition: color 0.2s ease-in-out;
-    }
-    nav a:hover {
-      color: #93c5fd;
-      text-decoration: underline;
-    }
-    main {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .tagline {
-      text-align: center;
-      font-size: 1.25rem;
-      color: #94a3b8;
-      margin-bottom: 35px;
-      font-weight: 300;
-    }
-    .places-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
-    }
-    .place-card {
-      background-color: #171b24;
-      border: 1px solid #222734;
-      border-radius: 12px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .place-card:hover {
-      transform: translateY(-4px);
-      border-color: #3b82f6;
-    }
-    .place-card h3 {
-      color: #ffffff;
-      font-size: 1.35rem;
-      margin-bottom: 6px;
-    }
-    .place-card .category {
-      font-size: 0.85rem;
-      color: #60a5fa;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-    }
-    .place-card .description {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-      margin-bottom: 18px;
-    }
-    .place-card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .read-more-link {
-      display: inline-block;
-      margin-top: auto;
-      color: #60a5fa;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
-    .read-more-link:hover {
-      color: #93c5fd;
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      color: #64748b;
-      font-size: 0.9rem;
-      border-top: 1px solid #1e293b;
-      padding-top: 30px;
-    }
-  </style>
+
+  <!-- External Stylesheet (Module 5 Requirement) -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -148,7 +24,7 @@
   <main>
     <p class="tagline">A curated guide to the finest brews, cozy study corners, and third-wave roasters in the City of Smiles.</p>
 
-    <h2 style="color: #ffffff; margin-bottom: 20px; font-size: 1.6rem; border-left: 4px solid #3b82f6; padding-left: 12px;">My Top Picks</h2>
+    <h2 style="color: #ffffff; margin-bottom: 20px; font-size: 1.6rem; border-left: 4px solid var(--brand-color); padding-left: 12px;">My Top Picks</h2>
     
     <div class="places-grid">
       
