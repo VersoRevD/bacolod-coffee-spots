@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Details and suggestion submission for Origami Coffee in Bacolod City.">
   <title>Origami Coffee | Bacolod Coffee Spots</title>
-  <!-- Relative link stepping up to root style.css -->
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
   <header>
     <h1>Bacolod Coffee Spots</h1>
-    <nav>
+    <nav aria-label="Main Navigation">
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
@@ -22,15 +22,15 @@
 
   <main>
     <!-- Place Detail Card -->
-    <section class="place-card">
-      <p class="category">Specialty Cafe & Study Hub</p>
+    <article class="place-card">
+      <p class="category">Specialty Cafe &amp; Study Hub</p>
       <h3>Origami Coffee</h3>
       <p class="description">A minimalist specialty coffee shop known for precision pour-overs, quiet study corners, and high-speed Wi-Fi located right in the heart of Bacolod City.</p>
-    </section>
+    </article>
 
     <!-- Suggest-a-Place Form (Module 4 / Module 5.2 requirement) -->
-    <form action="#" method="post">
-      <h3 style="color: #ffffff; margin-bottom: 20px;">Suggest a Place for Our Guide</h3>
+    <form action="#" method="post" aria-labelledby="suggest-title">
+      <h3 id="suggest-title" style="color: #ffffff; margin-bottom: 20px;">Suggest a Place for Our Guide</h3>
 
       <!-- Place Name input -->
       <div class="form-group">
@@ -64,7 +64,7 @@
 
         <label for="good-wifi" class="option-label">
           <input type="checkbox" id="good-wifi" name="good_points" value="fast-wifi">
-          Fast & Reliable Wi-Fi
+          Fast &amp; Reliable Wi-Fi
         </label>
 
         <label for="good-price" class="option-label">
@@ -81,7 +81,7 @@
       <!-- Contact Email -->
       <div class="form-group">
         <label for="suggest-email">Contact Email</label>
-        <input type="email" id="suggest-email" name="email" placeholder="name@example.com" required>
+        <input type="email" id="suggest-email" name="email" placeholder="name@example.com" autocomplete="email" required>
       </div>
 
       <!-- Submit Button -->
