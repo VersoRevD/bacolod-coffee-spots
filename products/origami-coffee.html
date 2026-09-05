@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Details and suggestion submission for Origami Coffee in Bacolod City.">
   <title>Origami Coffee | Bacolod Coffee Spots</title>
-  <!-- Notice the relative path ../style.css to step out of the places/ folder -->
+  <!-- Relatives path climbing up one folder -->
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
   <header>
     <h1>Bacolod Coffee Spots</h1>
-    <nav aria-label="Main Navigation">
+    <nav>
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
@@ -22,71 +21,31 @@
   </header>
 
   <main>
-    <!-- Place Detail Card -->
     <article class="place-card">
-      <p class="category">Specialty Cafe &amp; Study Hub</p>
       <h3>Origami Coffee</h3>
-      <p class="description">A minimalist specialty coffee shop known for precision pour-overs, quiet study corners, and high-speed Wi-Fi located right in the heart of Bacolod City.</p>
+      <p>A minimalist specialty coffee shop located in Bacolod City.</p>
     </article>
 
-    <!-- Suggest-a-Place Form -->
-    <form action="#" method="post" aria-labelledby="suggest-title">
-      <h3 id="suggest-title" style="color: #ffffff; margin-bottom: 20px;">Suggest a Place for Our Guide</h3>
-
-      <div class="form-group">
-        <label for="place_name">Place Name</label>
-        <input type="text" id="place_name" name="place_name" placeholder="e.g. Daily Grind Cafe" required>
-      </div>
-
+    <form action="#" method="post">
       <fieldset>
-        <legend>Category</legend>
+        <legend>Suggest Improvements</legend>
 
-        <label for="cat-cafe" class="option-label">
-          <input type="radio" id="cat-cafe" name="category" value="cafe" checked>
-          Coffee Shop / Cafe
-        </label>
+        <label for="visitor-name">Your Name</label>
+        <input type="text" id="visitor-name" name="name" required>
 
-        <label for="cat-study" class="option-label">
-          <input type="radio" id="cat-study" name="category" value="study-spot">
-          Study / Coworking Spot
-        </label>
+        <label for="visitor-email">Your Email</label>
+        <input type="email" id="visitor-email" name="email" required>
 
-        <label for="cat-outdoor" class="option-label">
-          <input type="radio" id="cat-outdoor" name="category" value="outdoors">
-          Outdoor / Garden Spot
-        </label>
+        <label for="suggestions">Feedback</label>
+        <textarea id="suggestions" name="suggestions" rows="4" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
       </fieldset>
-
-      <fieldset>
-        <legend>What's good about it?</legend>
-
-        <label for="good-wifi" class="option-label">
-          <input type="checkbox" id="good-wifi" name="good_points" value="fast-wifi">
-          Fast &amp; Reliable Wi-Fi
-        </label>
-
-        <label for="good-price" class="option-label">
-          <input type="checkbox" id="good-price" name="good_points" value="affordable">
-          Affordable Prices
-        </label>
-
-        <label for="good-quiet" class="option-label">
-          <input type="checkbox" id="good-quiet" name="good_points" value="quiet-environment">
-          Quiet Environment
-        </label>
-      </fieldset>
-
-      <div class="form-group">
-        <label for="suggest-email">Contact Email</label>
-        <input type="email" id="suggest-email" name="email" placeholder="name@example.com" autocomplete="email" required>
-      </div>
-
-      <button type="submit">Submit suggestion</button>
     </form>
   </main>
 
   <footer>
-    <p>&copy; 2026 Vincent Rev D. Verso. All rights reserved.</p>
+    <p>&copy; 2026 Vincent Rev D. Verso</p>
   </footer>
 
 </body>
