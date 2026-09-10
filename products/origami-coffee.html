@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Origami Coffee | Bacolod Coffee Spots</title>
-  <!-- Relatives path climbing up one folder -->
+  <title>Origami Coffee Co. | Bacolod Coffee Spots</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -21,31 +20,50 @@
   </header>
 
   <main>
+    <!-- Place Detail Card -->
     <article class="place-card">
-      <h3>Origami Coffee</h3>
-      <p>A minimalist specialty coffee shop located in Bacolod City.</p>
+      <h3>Origami Coffee Co.</h3>
+      <p>Origami Coffee Co. offers a clean, distraction-free environment tailored for remote work and coffee purists.</p>
+      
+      <ul class="place-info-list">
+        <li>📍 <strong>Address:</strong> Lacson Street, Bacolod City, Negros Occidental</li>
+        <li>📶 <strong>Amenities:</strong> High-speed Wi-Fi, Power Outlets, Air-conditioned</li>
+        <li>☕ <strong>Featured Drinks:</strong> Cold Brew, Uji Matcha Latte, Hand Drip</li>
+      </ul>
     </article>
 
+    <!-- Order / Inquiry Form -->
     <form action="#" method="post">
       <fieldset>
-        <legend>Suggest Improvements</legend>
+        <legend>Coffee Beans Order Enquiry</legend>
 
-        <label for="visitor-name">Your Name</label>
-        <input type="text" id="visitor-name" name="name" required>
+        <label for="customer-name">Your Full Name</label>
+        <input type="text" id="customer-name" name="name" required placeholder="e.g. Juan dela Cruz">
 
-        <label for="visitor-email">Your Email</label>
-        <input type="email" id="visitor-email" name="email" required>
+        <label for="customer-email">Your Email Address</label>
+        <input type="email" id="customer-email" name="email" required placeholder="e.g. juan@example.com">
 
-        <label for="suggestions">Feedback</label>
-        <textarea id="suggestions" name="suggestions" rows="4" required></textarea>
+        <label for="bean-select">Select Coffee Beans</label>
+        <select id="bean-select" name="bean_type" required>
+          <option value="">-- Choose a Roast --</option>
+          <option value="origami-house">Origami House Blend (250g)</option>
+          <option value="kanlaon-dark">Kanlaon Dark Roast (250g)</option>
+          <option value="ethiopia-light">Ethiopia Yirgacheffe Light Roast (250g)</option>
+        </select>
 
-        <button type="submit">Submit Feedback</button>
+        <label for="quantity">Quantity (Bags)</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+
+        <label for="notes">Special Requests / Shipping Address</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Enter delivery address or grind preferences (e.g. Whole Bean, Espresso, French Press)..."></textarea>
+
+        <button type="submit">Submit Enquiry Order</button>
       </fieldset>
     </form>
   </main>
 
   <footer>
-    <p>&copy; 2026 Vincent Rev D. Verso</p>
+    <p>&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Spots</p>
   </footer>
 
 </body>
