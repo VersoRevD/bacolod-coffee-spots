@@ -1,14 +1,14 @@
 /* ==========================================
-   1. COLOR VARIABLES (Module 5.4)
+   1. COLOR VARIABLES
    ========================================== */
 :root {
-  --brand: #e07a5f;          /* Coffee/Terracotta brand color */
+  --brand: #e07a5f;
   --brand-hover: #c8654b;
-  --dark-bg: #0f1115;        /* Dark background */
-  --card-bg: #171b24;        /* Card & container background */
-  --text-primary: #ffffff;   /* High-contrast primary text */
-  --text-secondary: #cbd5e1; /* Subtitle / secondary text */
-  --border-muted: #2d3748;   /* Input borders */
+  --dark-bg: #0f1115;
+  --card-bg: #171b24;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --border-muted: #2d3748;
 }
 
 /* ==========================================
@@ -33,74 +33,101 @@ main {
   padding: 0 20px;
 }
 
-header, footer {
+/* ==========================================
+   3. FLEXBOX HEADER (Module 6.1 Requirement)
+   ========================================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--card-bg);
-  text-align: center;
-  padding: 24px 20px;
+  padding: 20px 40px;
   border-bottom: 1px solid var(--border-muted);
 }
 
-footer {
-  border-bottom: none;
-  border-top: 1px solid var(--border-muted);
-  margin-top: 40px;
+.site-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
 }
 
-h1, h2, h3 {
-  margin-top: 0;
-  color: var(--text-primary);
-}
-
-a {
-  color: var(--brand);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ==========================================
-   3. NAVIGATION
-   ========================================== */
-nav ul {
+.site-header nav ul {
+  display: flex;
+  gap: 20px;            /* Modern flex gap replacing margins */
   list-style: none;
   padding: 0;
-  margin: 16px 0 0 0;
+  margin: 0;
 }
 
-nav li {
-  display: inline-block;
-  margin: 0 12px;
-}
-
-nav a {
+.site-header nav a {
   color: var(--text-secondary);
   text-transform: uppercase;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
-nav a:hover {
+.site-header nav a:hover {
   color: var(--brand);
+  text-decoration: none;
+}
+
+footer {
+  background-color: var(--card-bg);
+  text-align: center;
+  padding: 24px 20px;
+  border-top: 1px solid var(--border-muted);
+  margin-top: 40px;
 }
 
 /* ==========================================
-   4. PLACE CARDS (Module 5.4 Checklist)
+   4. FLEXBOX CENTERING HERO (Lesson 6.4)
+   ========================================== */
+.hero-banner {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  height: 180px;           /* Defined height required for vertical alignment */
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  border: 1px solid var(--border-muted);
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-banner h2 {
+  margin: 0 0 8px 0;
+  color: var(--brand);
+}
+
+.hero-banner p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* ==========================================
+   5. PLACE CARDS & IMAGES
    ========================================== */
 .place-card {
   background-color: var(--card-bg);
   border-radius: 10px;
-  padding: 24px;                      /* Exceeds 16px requirement */
-  border-left: 6px solid var(--brand); /* Coloured left border using variable */
-  margin-bottom: 24px;                /* Space between cards */
+  padding: 24px;
+  border-left: 6px solid var(--brand);
+  margin-bottom: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+.card-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
 .place-card h3 {
-  font-size: 1.5rem;                  /* Distinct font-size */
-  color: var(--text-primary);         /* High contrast header color */
+  font-size: 1.5rem;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
@@ -118,11 +145,11 @@ nav a:hover {
 .place-info-list li {
   color: var(--text-secondary);
   font-size: 0.95rem;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 /* ==========================================
-   5. FORM STYLING (Module 5.4 Checklist)
+   6. FORM STYLING
    ========================================== */
 form {
   background-color: var(--card-bg);
@@ -133,14 +160,14 @@ form {
 }
 
 fieldset {
-  padding: 20px;                      /* Padding on fieldset */
-  border-radius: 8px;                 /* Border-radius on fieldset */
+  padding: 20px;
+  border-radius: 8px;
   border: 1px solid var(--border-muted);
   margin: 0 0 20px 0;
 }
 
 legend {
-  color: var(--brand);                /* Styled legend using brand variable */
+  color: var(--brand);
   font-weight: 700;
   font-size: 1.1rem;
   padding: 0 10px;
@@ -159,7 +186,7 @@ input[type="number"],
 select,
 textarea {
   width: 100%;
-  padding: 12px;                      /* Consistent padding on inputs */
+  padding: 12px;
   border-radius: 6px;
   border: 1px solid var(--border-muted);
   background-color: var(--dark-bg);
@@ -169,7 +196,6 @@ textarea {
   font-size: 1rem;
 }
 
-/* VISIBLE FOCUS STATE (Module 5.4 Requirement) */
 input:focus,
 select:focus,
 textarea:focus {
@@ -178,12 +204,12 @@ textarea:focus {
 }
 
 button[type="submit"] {
-  background-color: var(--brand);     /* Styled submit button */
+  background-color: var(--brand);
   color: #ffffff;
-  padding: 14px 28px;                 /* Padding */
-  border: none;                       /* No default border */
+  padding: 14px 28px;
+  border: none;
   border-radius: 6px;
-  cursor: pointer;                    /* Cursor: pointer */
+  cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
   transition: background-color 0.2s ease;
@@ -191,9 +217,4 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: var(--brand-hover);
-}
-
-button[type="submit"]:focus-visible {
-  outline: 3px solid #ffffff;
-  outline-offset: 2px;
 }
