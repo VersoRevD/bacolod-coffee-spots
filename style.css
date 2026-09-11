@@ -105,47 +105,38 @@ footer {
   color: var(--text-secondary);
 }
 
-/* ==========================================
-   5. PLACE CARDS & IMAGES
-   ========================================== */
-.place-card {
-  background-color: var(--card-bg);
-  border-radius: 10px;
-  padding: 24px;
-  border-left: 6px solid var(--brand);
-  margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* Ensure all images never overflow their container */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
+/* Compact sizing specifically for place & shop cards */
 .card-image {
   width: 100%;
-  max-height: 250px;
-  object-fit: cover;
+  height: 180px;            /* Reduced height so it doesn't take up full screen */
+  object-fit: cover;        /* Scales image cleanly without stretching */
   border-radius: 8px;
   margin-bottom: 16px;
 }
 
-.place-card h3 {
-  font-size: 1.5rem;
-  color: var(--text-primary);
-  margin-bottom: 8px;
+/* Small, compact image layout for shop / product detail page */
+.shop-detail-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
-.place-card p {
-  color: var(--text-secondary);
-  margin-bottom: 12px;
-}
-
-.place-info-list {
-  list-style: none;
-  padding: 0;
-  margin: 12px 0 16px 0;
-}
-
-.place-info-list li {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 6px;
+.shop-product-img {
+  width: 160px;             /* Compact product thumbnail size */
+  height: 160px;
+  object-fit: contain;      /* Keeps exact proportions for product shots */
+  background-color: var(--dark-bg);
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border-muted);
+  flex-shrink: 0;           /* Prevents image from shrinking in flex container */
 }
 
 /* ==========================================
