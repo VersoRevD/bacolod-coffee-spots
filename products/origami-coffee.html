@@ -8,7 +8,8 @@
 </head>
 <body>
 
-  <header>
+  <!-- Flexbox Header -->
+  <header class="site-header">
     <h1>Bacolod Coffee Spots</h1>
     <nav>
       <ul>
@@ -20,19 +21,18 @@
   </header>
 
   <main>
-    <!-- Place Detail Card -->
     <article class="place-card">
+      <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQFMUywMcm6d5_4k57y28K-aMe_1oPcXUC9nnOk2N5PZp-9iQGS4K88-jnkXJqeUQkkzstko8-JMQKbswA" alt="Origami Coffee Co. Dripper" class="card-image">
       <h3>Origami Coffee Co.</h3>
-      <p>Origami Coffee Co. offers a clean, distraction-free environment tailored for remote work and coffee purists.</p>
+      <p>Origami Coffee Co. offers a clean, distraction-free environment tailored for remote work, study sessions, and coffee purists alike.</p>
       
       <ul class="place-info-list">
-        <li>📍 <strong>Address:</strong> Lacson Street, Bacolod City, Negros Occidental</li>
-        <li>📶 <strong>Amenities:</strong> High-speed Wi-Fi, Power Outlets, Air-conditioned</li>
-        <li>☕ <strong>Featured Drinks:</strong> Cold Brew, Uji Matcha Latte, Hand Drip</li>
+        <li>📍 <strong>Address:</strong> 17th Lacson Street, Bacolod City, Negros Occidental</li>
+        <li>📶 <strong>Amenities:</strong> Fiber Wi-Fi (100Mbps+), Dedicated Outlets, Quiet Zone</li>
+        <li>☕ <strong>Featured Drinks:</strong> Cold Brew, Uji Matcha Latte, Hand Drip Single-Origin</li>
       </ul>
     </article>
 
-    <!-- Order / Inquiry Form -->
     <form action="#" method="post">
       <fieldset>
         <legend>Coffee Beans Order Enquiry</legend>
@@ -55,7 +55,7 @@
         <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
 
         <label for="notes">Special Requests / Shipping Address</label>
-        <textarea id="notes" name="notes" rows="4" placeholder="Enter delivery address or grind preferences (e.g. Whole Bean, Espresso, French Press)..."></textarea>
+        <textarea id="notes" name="notes" rows="4" placeholder="Enter delivery address or grind preferences..."></textarea>
 
         <button type="submit">Submit Enquiry Order</button>
       </fieldset>
