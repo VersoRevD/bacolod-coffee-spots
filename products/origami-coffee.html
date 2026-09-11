@@ -3,39 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Origami Coffee Co. | Bacolod Coffee Spots</title>
+  <title>Origami Coffee House Blend | Product Details</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-  <!-- Flexbox Header -->
+  <!-- Flexbox Header (Module 6.1) -->
   <header class="site-header">
-    <h1>Bacolod Coffee Spots</h1>
+    <h1>Bacolod Coffee Shop</h1>
     <nav>
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../index.html">Shop Home</a></li>
+        <li><a href="../about.html">About Store</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <article class="place-card">
-      <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQFMUywMcm6d5_4k57y28K-aMe_1oPcXUC9nnOk2N5PZp-9iQGS4K88-jnkXJqeUQkkzstko8-JMQKbswA" alt="Origami Coffee Co. Dripper" class="card-image">
-      <h3>Origami Coffee Co.</h3>
-      <p>Origami Coffee Co. offers a clean, distraction-free environment tailored for remote work, study sessions, and coffee purists alike.</p>
-      
-      <ul class="place-info-list">
-        <li>📍 <strong>Address:</strong> 17th Lacson Street, Bacolod City, Negros Occidental</li>
-        <li>📶 <strong>Amenities:</strong> Fiber Wi-Fi (100Mbps+), Dedicated Outlets, Quiet Zone</li>
-        <li>☕ <strong>Featured Drinks:</strong> Cold Brew, Uji Matcha Latte, Hand Drip Single-Origin</li>
-      </ul>
+    <!-- Detailed Product Card -->
+    <article class="product-card">
+      <div class="shop-detail-container">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=400&q=80" alt="Origami Coffee House Blend Bag" class="shop-product-img">
+        <div>
+          <h3>Origami Coffee House Blend (250g)</h3>
+          <div class="product-price">₱450.00</div>
+          <p>Our flagship medium roast blend roasted specifically for pour-over precision brewing. Delivers a clean cup with low acidity and rich aroma.</p>
+          
+          <ul class="place-info-list">
+            <li>📍 <strong>Roastery Partner:</strong> Origami Coffee Co., Lacson St., Bacolod City</li>
+            <li>🌱 <strong>Variety:</strong> 100% Arabica (Mt. Kanlaon Single-Origin)</li>
+            <li>⚙️ <strong>Grind Options:</strong> Whole Bean, Fine Espresso, Medium Drip, Coarse French Press</li>
+          </ul>
+        </div>
+      </div>
     </article>
 
+    <!-- Product Order Form -->
     <form action="#" method="post">
       <fieldset>
-        <legend>Coffee Beans Order Enquiry</legend>
+        <legend>Place Order Enquiry</legend>
 
         <label for="customer-name">Your Full Name</label>
         <input type="text" id="customer-name" name="name" required placeholder="e.g. Juan dela Cruz">
@@ -43,27 +50,26 @@
         <label for="customer-email">Your Email Address</label>
         <input type="email" id="customer-email" name="email" required placeholder="e.g. juan@example.com">
 
-        <label for="bean-select">Select Coffee Beans</label>
+        <label for="bean-select">Select Coffee Roast Product</label>
         <select id="bean-select" name="bean_type" required>
-          <option value="">-- Choose a Roast --</option>
-          <option value="origami-house">Origami House Blend (250g)</option>
-          <option value="kanlaon-dark">Kanlaon Dark Roast (250g)</option>
-          <option value="ethiopia-light">Ethiopia Yirgacheffe Light Roast (250g)</option>
+          <option value="origami-house">Origami House Blend (250g) - ₱450.00</option>
+          <option value="kanlaon-dark">Kanlaon Dark Roast (250g) - ₱480.00</option>
+          <option value="muscovado-pack">Muscovado Cold Brew Pack - ₱380.00</option>
         </select>
 
         <label for="quantity">Quantity (Bags)</label>
         <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
 
-        <label for="notes">Special Requests / Shipping Address</label>
-        <textarea id="notes" name="notes" rows="4" placeholder="Enter delivery address or grind preferences..."></textarea>
+        <label for="notes">Delivery Address &amp; Special Grind Requests</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Enter complete shipping address and preferred grind type..."></textarea>
 
-        <button type="submit">Submit Enquiry Order</button>
+        <button type="submit">Complete Order Enquiry</button>
       </fieldset>
     </form>
   </main>
 
   <footer>
-    <p>&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Spots</p>
+    <p>&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Beans Shop</p>
   </footer>
 
 </body>
