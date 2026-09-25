@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Origami Coffee House Blend | Product Details</title>
+  <title>Origami Coffee Co. | Details & Order</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-  <!-- Flexbox Header (Module 6.1) -->
   <header class="site-header">
     <h1>Bacolod Coffee Shop</h1>
     <nav>
@@ -21,53 +20,71 @@
   </header>
 
   <main>
-    <!-- Detailed Product Card -->
-    <article class="product-card">
+    <!-- Cafe Details -->
+    <article class="place-card">
       <div class="shop-detail-container">
-        <img 
-          src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5ofCJippeBuazUijqDkadVUtvqYTCMYLw3QPYOT1Bn7w69hZLhR8mObi0wEnjTZtbNo4eZj4AnkRYw-g" 
-          alt="Origami Coffee Bean Bag Product" 
-          class="shop-product-img"
-        >
+        <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQokYnp4lGjrzE7LeOJPil8x2rWcY3ggzVJ4ZJhdfCbAcbVltInfceJL_h-B6NfZhLryY5mPkWX08rk46U" alt="Origami Cafe" class="shop-product-img">
         <div>
-          <h3>Origami Coffee House Blend (250g)</h3>
-          <div class="product-price">₱450.00</div>
-          <p>Our flagship medium roast blend roasted specifically for pour-over precision brewing. Delivers a clean cup with low acidity and rich aroma.</p>
-          
+          <h3>Origami Coffee Co.</h3>
+          <p>A premier specialty coffee bar and quiet study space in Bacolod City.</p>
           <ul class="place-info-list">
-            <li>📍 <strong>Roastery Partner:</strong> Origami Coffee Co., Lacson St., Bacolod City</li>
-            <li>🌱 <strong>Variety:</strong> 100% Arabica (Mt. Kanlaon Single-Origin)</li>
-            <li>⚙️ <strong>Grind Options:</strong> Whole Bean, Fine Espresso, Medium Drip, Coarse French Press</li>
+            <li>📍 <strong>Address:</strong> 17th Lacson Street, Bacolod City</li>
+            <li>⏰ <strong>Hours:</strong> Mon – Sun: 8:00 AM – 10:00 PM</li>
+            <li>📶 <strong>Workspace:</strong> 150 Mbps Fiber Wi-Fi, outlets everywhere</li>
           </ul>
         </div>
       </div>
     </article>
 
-    <!-- Product Order Form -->
+    <h2>Featured Products (Side-by-Side Layout)</h2>
+
+    <!-- Module 6.2 Required Grid Container -->
+    <div class="product-grid">
+      
+      <article class="product-card">
+        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5ofCJippeBuazUijqDkadVUtvqYTCMYLw3QPYOT1Bn7w69hZLhR8mObi0wEnjTZtbNo4eZj4AnkRYw-g" alt="Origami House Blend" class="shop-product-img">
+        <h3>Origami House Blend (250g)</h3>
+        <p class="price-tag">₱450.00</p>
+        <p>Medium roast crafted specifically for pour-over precision brewing.</p>
+      </article>
+
+      <article class="product-card">
+        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSXr38FRH6d55lrpN63pYmIkYe4IdcL8TpTgEYe7dC8ztGCRcKCKUqySJoMAagNiei5Db3HohfG0zk5iw0" alt="Mt. Kanlaon Dark Roast" class="shop-product-img">
+        <h3>Mt. Kanlaon Dark Roast</h3>
+        <p class="price-tag">₱480.00</p>
+        <p>Volcanic soil Arabica beans with deep cacao and smoky caramel notes.</p>
+      </article>
+
+      <article class="product-card">
+        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5ofCJippeBuazUijqDkadVUtvqYTCMYLw3QPYOT1Bn7w69hZLhR8mObi0wEnjTZtbNo4eZj4AnkRYw-g" alt="Muscovado Packs" class="shop-product-img">
+        <h3>Muscovado Steep Packs</h3>
+        <p class="price-tag">₱380.00</p>
+        <p>Pre-portioned filter packs infused with local muscovado sugar.</p>
+      </article>
+
+    </div>
+
+    <!-- Order Form -->
     <form action="#" method="post">
       <fieldset>
-        <legend>Place Order Enquiry</legend>
-
-        <label for="customer-name">Your Full Name</label>
+        <legend>Place Coffee Beans Order / Inquiry</legend>
+        <label for="customer-name">Full Name</label>
         <input type="text" id="customer-name" name="name" required placeholder="e.g. Juan dela Cruz">
 
-        <label for="customer-email">Your Email Address</label>
+        <label for="customer-email">Email Address</label>
         <input type="email" id="customer-email" name="email" required placeholder="e.g. juan@example.com">
 
-        <label for="bean-select">Select Coffee Roast Product</label>
+        <label for="bean-select">Coffee Product</label>
         <select id="bean-select" name="bean_type" required>
-          <option value="origami-house">Origami House Blend (250g) - ₱450.00</option>
-          <option value="kanlaon-dark">Kanlaon Dark Roast (250g) - ₱480.00</option>
-          <option value="muscovado-pack">Muscovado Cold Brew Pack - ₱380.00</option>
+          <option value="origami-house">Origami House Blend (250g) — ₱450.00</option>
+          <option value="kanlaon-dark">Mt. Kanlaon Dark Roast (250g) — ₱480.00</option>
+          <option value="muscovado">Muscovado Steep Packs — ₱380.00</option>
         </select>
 
-        <label for="quantity">Quantity (Bags)</label>
+        <label for="quantity">Quantity</label>
         <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
 
-        <label for="notes">Delivery Address &amp; Special Grind Requests</label>
-        <textarea id="notes" name="notes" rows="4" placeholder="Enter complete shipping address and preferred grind type..."></textarea>
-
-        <button type="submit">Complete Order Enquiry</button>
+        <button type="submit">Complete Order Inquiry</button>
       </fieldset>
     </form>
   </main>
@@ -75,6 +92,5 @@
   <footer>
     <p>&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Beans Shop</p>
   </footer>
-
 </body>
 </html>
