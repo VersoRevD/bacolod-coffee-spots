@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kubo Coffee House | Details & Order</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <h1>Bacolod Coffee Shop</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Shop Home</a></li>
+        <li><a href="../about.html">About Store</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Cafe Details -->
+    <article class="place-card">
+      <div class="shop-detail-container">
+        <img 
+          src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5ofCJippeBuazUijqDkadVUtvqYTCMYLw3QPYOT1Bn7w69hZLhR8mObi0wEnjTZtbNo4eZj4AnkRYw-g" 
+          alt="Kubo Coffee House Setup" 
+          class="shop-product-img"
+        >
+        <div>
+          <h3>Kubo Coffee House</h3>
+          <p>A native-inspired open-air coffee spot in Bacolod blending traditional Filipino Robusta beans, native tablea cocoa, and fresh local ingredients.</p>
+          
+          <ul class="place-info-list">
+            <li>📍 <strong>Address:</strong> Cordova Avenue, Mandalagan, Bacolod City</li>
+            <li>⏰ <strong>Hours:</strong> Monday – Sunday: 9:00 AM – 11:00 PM</li>
+            <li>📶 <strong>Workspace Info:</strong> Garden seating with natural ventilation, quiet evening atmosphere, student-friendly outlets.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- In-Store Specialties -->
+    <article class="place-card">
+      <h3>In-Store Specialties Menu</h3>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <h4>Muscovado Iced Brew</h4>
+          <p class="price-tag">₱130.00</p>
+          <p>Cold brew sweetened with unrefined muscovado sugar.</p>
+        </div>
+        <div class="menu-card">
+          <h4>Native Tablea Mocha</h4>
+          <p class="price-tag">₱150.00</p>
+          <p>Espresso blended with pure melted Negrense cocoa.</p>
+        </div>
+        <div class="menu-card">
+          <h4>Coconut Cream Espresso</h4>
+          <p class="price-tag">₱145.00</p>
+          <p>Double shot poured over fresh coconut cream.</p>
+        </div>
+      </div>
+    </article>
+
+    <h2>Featured Products (Side-by-Side Layout)</h2>
+
+    <!-- Module 6.2 Side-by-Side Flexbox Grid -->
+    <div class="product-grid">
+      
+      <article class="product-card">
+        <img 
+          src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5ofCJippeBuazUijqDkadVUtvqYTCMYLw3QPYOT1Bn7w69hZLhR8mObi0wEnjTZtbNo4eZj4AnkRYw-g" 
+          alt="Muscovado Cold Brew Pack" 
+          class="shop-product-img"
+        >
+        <h3>Muscovado Cold Brew Pack</h3>
+        <p class="price-tag">₱380.00</p>
+        <p>Pre-portioned filter packs infused with natural Bacolod Muscovado sugar.</p>
+      </article>
+
+      <article class="product-card">
+        <img 
+          src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSXr38FRH6d55lrpN63pYmIkYe4IdcL8TpTgEYe7dC8ztGCRcKCKUqySJoMAagNiei5Db3HohfG0zk5iw0" 
+          alt="Native Robusta Beans" 
+          class="shop-product-img"
+        >
+        <h3>Negros Robusta Beans (250g)</h3>
+        <p class="price-tag">₱350.00</p>
+        <p>Dark roast high-caffeine native beans with heavy body and cocoa notes.</p>
+      </article>
+
+      <article class="product-card">
+        <img 
+          src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQokYnp4lGjrzE7LeOJPil8x2rWcY3ggzVJ4ZJhdfCbAcbVltInfceJL_h-B6NfZhLryY5mPkWX08rk46U" 
+          alt="Native Tablea Blocks" 
+          class="shop-product-img"
+        >
+        <h3>Negros Native Tablea Pack</h3>
+        <p class="price-tag">₱280.00</p>
+        <p>100% pure unsweetened cocoa blocks for brewing traditional hot chocolate.</p>
+      </article>
+
+    </div>
+
+    <!-- Order Form -->
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Place Coffee Beans Order / Inquiry</legend>
+
+        <label for="customer-name">Full Name *</label>
+        <input type="text" id="customer-name" name="name" required placeholder="e.g. Juan dela Cruz">
+
+        <label for="customer-email">Email Address *</label>
+        <input type="email" id="customer-email" name="email" required placeholder="e.g. juan@example.com">
+
+        <label for="bean-select">Select Coffee Roast Product *</label>
+        <select id="bean-select" name="bean_type" required>
+          <option value="muscovado-pack">Muscovado Cold Brew Pack — ₱380.00</option>
+          <option value="robusta-beans">Negros Robusta Beans (250g) — ₱350.00</option>
+          <option value="tablea-pack">Negros Native Tablea Pack — ₱280.00</option>
+        </select>
+
+        <label for="quantity">Quantity (Packs) *</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+
+        <label for="notes">Delivery Address & Special Instructions</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Enter complete Bacolod shipping address or pick-up date..."></textarea>
+
+        <button type="submit">Complete Order Inquiry</button>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Beans Shop</p>
+  </footer>
+
+</body>
+</html>
