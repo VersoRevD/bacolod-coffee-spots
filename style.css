@@ -1,14 +1,15 @@
 /* =========================================================
-   Central Stylesheet - Bacolod Coffee Beans Store
-   Module 6.3 (Flex Header & Centering) + Module 6.4 (Place Grid)
+   Central Stylesheet - Bacolod Coffee Beans Shop
+   Module 7.1 (Grid Template Areas) + Module 7.2 (Mobile-First Responsive)
    ========================================================= */
 
 :root {
-  --brand: #5a3825;
-  --brand-dark: #3d2417;
+  --brand: #1e40af;           /* Original Blue */
+  --brand-dark: #1e3a8a;      /* Dark Blue */
+  --brand-light: #ebf8ff;     /* Light Blue Tint */
   --bg-light: #f8fafc;
-  --text-dark: #1a202c;
-  --text-muted: #4a5568;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
   --border-color: #e2e8f0;
 }
 
@@ -26,18 +27,60 @@ body {
 }
 
 /* ---------------------------------------------------------
+   MODULE 7.2: Base Layout - Mobile First (Single Column Grid)
+   --------------------------------------------------------- */
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "masthead"
+    "main"
+    "side"
+    "foot";
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ---------------------------------------------------------
+   MODULE 7.1: Named Grid Area Assignments
+   --------------------------------------------------------- */
+header.site-header { grid-area: masthead; }
+aside.site-sidebar { grid-area: side; }
+main.site-main     { grid-area: main; }
+footer.site-footer { grid-area: foot; }
+
+/* ---------------------------------------------------------
+   MODULE 7.2: Tablet & Desktop Enhancement (Min-Width 700px)
+   --------------------------------------------------------- */
+@media (min-width: 700px) {
+  .page {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "masthead masthead"
+      "side     main"
+      "foot     foot";
+    gap: 20px;
+    padding: 1.5rem;
+  }
+}
+
+/* ---------------------------------------------------------
    Slice of Life: Store Status Bar
    --------------------------------------------------------- */
 .store-status-bar {
-  background: #2c1810;
-  color: #f7fafc;
-  padding: 0.5rem 1.5rem;
+  background: var(--brand-dark);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
   font-size: 0.85rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
 }
 
 .status-dot {
@@ -50,38 +93,34 @@ body {
 }
 
 /* ---------------------------------------------------------
-   MODULE 6.3 REQUIREMENT: Flexbox Site Header
+   Module 6.3 Header (Preserved Flexbox inside Grid Masthead)
    --------------------------------------------------------- */
 .site-header {
-  display: flex;                      /* Module 6.3 */
-  justify-content: space-between;     /* Title on far left, Nav on far right */
-  align-items: center;                /* Vertically align items */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #ffffff;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
 
 .site-header h1 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--brand);
 }
 
-/* Nav is the 2nd direct child of .site-header */
 .site-header nav ul {
-  display: flex;                      /* Module 6.3 */
-  gap: 20px;                          /* Module 6.3 Gap spacing */
+  display: flex;
+  gap: 16px;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-/* NOTE: Removed display: inline-block from li as instructed */
 .site-header nav a {
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.2s;
+  font-size: 0.9rem;
 }
 
 .site-header nav a:hover,
@@ -89,105 +128,121 @@ body {
   color: var(--brand);
 }
 
-/* Main Content Container */
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.5rem;
+/* ---------------------------------------------------------
+   MODULE 7.1 REQUIREMENT: Sidebar Component (<aside>)
+   --------------------------------------------------------- */
+.site-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sidebar-widget {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.sidebar-widget h3 {
+  font-size: 0.95rem;
+  color: var(--brand);
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid var(--brand-light);
+  padding-bottom: 0.3rem;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-menu a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.875rem;
+  display: block;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+  background: var(--brand-light);
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.hours-list {
+  list-style: none;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
 }
 
 /* ---------------------------------------------------------
-   MODULE 6.3 REQUIREMENT: Centered Banner (Lesson 6.4 technique)
+   Main Content & Hero Banner
    --------------------------------------------------------- */
 .hero-banner {
   display: flex;
-  justify-content: center;            /* Horizontally center */
-  align-items: center;                /* Vertically center */
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  min-height: 220px;                  /* Height needed for vertical centering */
-  background: linear-gradient(rgba(44, 24, 16, 0.75), rgba(44, 24, 16, 0.75)), 
+  min-height: 200px;
+  background: linear-gradient(rgba(30, 64, 175, 0.85), rgba(30, 58, 138, 0.85)), 
               url('https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSXr38FRH6d55lrpN63pYmIkYe4IdcL8TpTgEYe7dC8ztGCRcKCKUqySJoMAagNiei5Db3HohfG0zk5iw0') center/cover;
   color: #ffffff;
-  border-radius: 10px;
-  padding: 2rem;
-  margin-bottom: 2rem;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-banner h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: 0.5rem;
 }
 
 .hero-banner p {
-  font-size: 1.05rem;
-  max-width: 600px;
+  font-size: 0.95rem;
   opacity: 0.9;
 }
 
-/* Slice of Life: Barista Spotlight */
 .barista-spotlight {
-  background: #fffaf0;
-  border-left: 4px solid #dd6b20;
-  padding: 1.25rem;
+  background: var(--brand-light);
+  border-left: 4px solid var(--brand);
+  padding: 1rem;
   border-radius: 6px;
-  margin-bottom: 2rem;
-}
-
-.barista-spotlight h3 {
-  font-size: 1.1rem;
-  color: #7b341e;
-  margin-bottom: 0.25rem;
-}
-
-/* Controls & Pills */
-.shop-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.filter-pills {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.pill {
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  background: #edf2f7;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.pill.active {
-  background: var(--brand);
-  color: #ffffff;
+.barista-spotlight h3 {
+  font-size: 1rem;
+  color: var(--brand-dark);
+  margin-bottom: 0.25rem;
 }
 
 /* ---------------------------------------------------------
-   MODULE 6.4 REQUIREMENT: Place Grid (Side-by-Side Cards)
+   Module 6.4 Place Grid (Flexible side-by-side cards)
    --------------------------------------------------------- */
-.place-grid,
-.product-grid {
-  display: flex;                      /* Module 6.4 */
-  flex-wrap: wrap;                    /* Module 6.4: Essential to prevent squashing */
-  gap: 24px;                          /* Module 6.4: Spacing between cards */
-  margin-bottom: 2.5rem;
+.place-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.place-card,
-.shop-card,
-.product-card {
-  flex: 1 1 240px;                    /* Module 6.4: grow, shrink, 240px base width */
+.place-card {
+  flex: 1 1 240px;
   background: #ffffff;
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -196,35 +251,31 @@ main {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.place-card:hover,
-.shop-card:hover,
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+.place-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 12px -2px rgba(30, 64, 175, 0.12);
 }
 
 .badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  left: 10px;
   background: var(--brand);
-  color: #fff;
-  padding: 0.25rem 0.6rem;
+  color: #ffffff;
+  padding: 0.2rem 0.5rem;
   font-size: 0.75rem;
   font-weight: bold;
   border-radius: 4px;
-  z-index: 2;
 }
 
-.card-media,
-.card-image {
+.card-media {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
 .card-body {
-  padding: 1.25rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -235,62 +286,58 @@ main {
   justify-content: space-between;
   font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .rating {
-  color: #ecc94b;
+  color: #d97706;
 }
 
-.card-title,
-.product-card h3 {
-  font-size: 1.15rem;
-  margin: 0 0 0.5rem 0;
+.card-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
   color: var(--text-dark);
 }
 
 .card-description {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.4;
-  margin-bottom: 1rem;
-  flex-grow: 1;
+  margin-bottom: 0.75rem;
 }
 
 .place-info-list {
   list-style: none;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 1rem;
 }
 
 .place-info-list li {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .card-footer {
-  padding: 1rem 1.25rem;
-  background: #f7fafc;
+  padding: 0.85rem 1rem;
+  background: var(--bg-light);
   border-top: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.price,
 .product-price {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--brand);
 }
 
 .btn-order {
   background: var(--brand);
   color: #ffffff;
-  padding: 0.5rem 0.9rem;
+  padding: 0.45rem 0.85rem;
   border-radius: 6px;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 600;
 }
 
@@ -298,11 +345,12 @@ main {
   background: var(--brand-dark);
 }
 
-footer {
+footer.site-footer {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   background-color: #ffffff;
-  border-top: 1px solid var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
