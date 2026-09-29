@@ -1,18 +1,18 @@
 /* =========================================================
    Central Stylesheet - Bacolod Coffee Beans Shop
-   Module 4 & 5 Classic Blue Palette + Module 7 Grid Architecture
+   Module 7.3 (Grid Layout Areas) + Module 7.4 (Mobile-First Responsive)
+   Palette: Classic Dark Navy Blue (#1e3a8a)
    ========================================================= */
 
 :root {
-  /* Module 4 & 5 Classic Blue Variables */
-  --brand: #1e3a8a;           /* Classic Deep Navy Blue */
-  --brand-hover: #1d4ed8;     /* Bright Accent Blue */
-  --brand-light: #dbeafe;     /* Soft Light Blue Background Accent */
-  --bg-page: #f8fafc;         /* Clean Light Page Background */
-  --card-bg: #ffffff;         /* Crisp White Card Container */
-  --text-primary: #1e293b;    /* Dark Charcoal Text */
+  --brand: #1e3a8a;           /* Classic Dark Navy Blue */
+  --brand-hover: #1d4ed8;     /* Vibrant Blue Accent */
+  --brand-light: #dbeafe;     /* Soft Light Blue Tint */
+  --bg-page: #f8fafc;         /* Page Background */
+  --card-bg: #ffffff;         /* Clean White Card Surface */
+  --text-primary: #1e293b;    /* Dark Charcoal Body Text */
   --text-secondary: #475569;  /* Muted Slate Text */
-  --border-light: #e2e8f0;    /* Soft Gray Border */
+  --border-light: #e2e8f0;    /* Border Line Color */
 }
 
 * {
@@ -29,7 +29,8 @@ body {
 }
 
 /* ---------------------------------------------------------
-   MODULE 7.2: Base Layout - Mobile First (Single Column Grid)
+   MODULE 7.4: Base Layout - Mobile First (Single Column Grid)
+   Primary content (main) sits ABOVE secondary content (side)
    --------------------------------------------------------- */
 .page {
   display: grid;
@@ -40,13 +41,13 @@ body {
     "side"
     "foot";
   gap: 16px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 1rem;
 }
 
 /* ---------------------------------------------------------
-   MODULE 7.1: Named Grid Area Assignments
+   MODULE 7.3: Named Grid Area Assignments
    --------------------------------------------------------- */
 header.site-header { grid-area: masthead; }
 aside.site-sidebar { grid-area: side; }
@@ -54,7 +55,7 @@ main.site-main     { grid-area: main; }
 footer.site-footer { grid-area: foot; }
 
 /* ---------------------------------------------------------
-   MODULE 7.2: Tablet & Desktop Enhancement (Min-Width 700px)
+   MODULE 7.4: Desktop & Tablet Enhancement (@media min-width 700px)
    --------------------------------------------------------- */
 @media (min-width: 700px) {
   .page {
@@ -69,7 +70,7 @@ footer.site-footer { grid-area: foot; }
 }
 
 /* ---------------------------------------------------------
-   Slice of Life: Store Status Bar (Classic Navy Accent)
+   Slice of Life: Store Status Bar (Dark Navy Theme)
    --------------------------------------------------------- */
 .store-status-bar {
   background: var(--brand);
@@ -95,7 +96,7 @@ footer.site-footer { grid-area: foot; }
 }
 
 /* ---------------------------------------------------------
-   Module 6.3 Header (Classic Module 4-5 Blue Navigation)
+   Module 6.3 Header (Flexbox inside Grid Masthead)
    --------------------------------------------------------- */
 .site-header {
   display: flex;
@@ -105,17 +106,17 @@ footer.site-footer { grid-area: foot; }
   padding: 1rem 1.25rem;
   border: 1px solid var(--border-light);
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .site-header h1 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--brand);
 }
 
 .site-header nav ul {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   list-style: none;
 }
 
@@ -123,7 +124,7 @@ footer.site-footer { grid-area: foot; }
   text-decoration: none;
   color: var(--text-secondary);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: color 0.2s ease;
 }
 
@@ -135,7 +136,7 @@ footer.site-footer { grid-area: foot; }
 }
 
 /* ---------------------------------------------------------
-   MODULE 7.1 REQUIREMENT: Sidebar Component (<aside>)
+   MODULE 7.3 REQUIREMENT: Sidebar Component (<aside>)
    --------------------------------------------------------- */
 .site-sidebar {
   display: flex;
@@ -197,7 +198,7 @@ footer.site-footer { grid-area: foot; }
 }
 
 /* ---------------------------------------------------------
-   Main Content & Hero Banner (Module 4-5 Deep Blue Hero)
+   Hero Banner & Content Highlights
    --------------------------------------------------------- */
 .hero-banner {
   display: flex;
@@ -239,7 +240,7 @@ footer.site-footer { grid-area: foot; }
 }
 
 /* ---------------------------------------------------------
-   Module 6.4 Place Grid (Classic Blue Product Cards)
+   Module 6.4 Place Grid (Responsive Flexbox Grid)
    --------------------------------------------------------- */
 .place-grid {
   display: flex;
