@@ -1,16 +1,18 @@
 /* =========================================================
    Central Stylesheet - Bacolod Coffee Beans Shop
-   Module 7.1 (Grid Template Areas) + Module 7.2 (Mobile-First Responsive)
+   Module 4 & 5 Classic Blue Palette + Module 7 Grid Architecture
    ========================================================= */
 
 :root {
-  --brand: #1e40af;           /* Original Blue */
-  --brand-dark: #1e3a8a;      /* Dark Blue */
-  --brand-light: #ebf8ff;     /* Light Blue Tint */
-  --bg-light: #f8fafc;
-  --text-dark: #1e293b;
-  --text-muted: #64748b;
-  --border-color: #e2e8f0;
+  /* Module 4 & 5 Classic Blue Variables */
+  --brand: #1e3a8a;           /* Classic Deep Navy Blue */
+  --brand-hover: #1d4ed8;     /* Bright Accent Blue */
+  --brand-light: #dbeafe;     /* Soft Light Blue Background Accent */
+  --bg-page: #f8fafc;         /* Clean Light Page Background */
+  --card-bg: #ffffff;         /* Crisp White Card Container */
+  --text-primary: #1e293b;    /* Dark Charcoal Text */
+  --text-secondary: #475569;  /* Muted Slate Text */
+  --border-light: #e2e8f0;    /* Soft Gray Border */
 }
 
 * {
@@ -22,8 +24,8 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.5;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
 }
 
 /* ---------------------------------------------------------
@@ -67,10 +69,10 @@ footer.site-footer { grid-area: foot; }
 }
 
 /* ---------------------------------------------------------
-   Slice of Life: Store Status Bar
+   Slice of Life: Store Status Bar (Classic Navy Accent)
    --------------------------------------------------------- */
 .store-status-bar {
-  background: var(--brand-dark);
+  background: var(--brand);
   color: #ffffff;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
@@ -80,52 +82,56 @@ footer.site-footer { grid-area: foot; }
   flex-wrap: wrap;
   gap: 0.5rem;
   border-radius: 6px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .status-dot {
   height: 8px;
   width: 8px;
-  background-color: #48bb78;
+  background-color: #34d399;
   border-radius: 50%;
   display: inline-block;
   margin-right: 6px;
 }
 
 /* ---------------------------------------------------------
-   Module 6.3 Header (Preserved Flexbox inside Grid Masthead)
+   Module 6.3 Header (Classic Module 4-5 Blue Navigation)
    --------------------------------------------------------- */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   padding: 1rem 1.25rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-light);
   border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .site-header h1 {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   color: var(--brand);
 }
 
 .site-header nav ul {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   list-style: none;
 }
 
 .site-header nav a {
   text-decoration: none;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .site-header nav a:hover,
 .site-header nav a.active {
-  color: var(--brand);
+  color: var(--brand-hover);
+  border-bottom: 2px solid var(--brand-hover);
+  padding-bottom: 2px;
 }
 
 /* ---------------------------------------------------------
@@ -138,10 +144,11 @@ footer.site-footer { grid-area: foot; }
 }
 
 .sidebar-widget {
-  background: #ffffff;
+  background: var(--card-bg);
   padding: 1rem;
   border-radius: 8px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 .sidebar-widget h3 {
@@ -162,11 +169,12 @@ footer.site-footer { grid-area: foot; }
 
 .sidebar-menu a {
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--text-primary);
   font-size: 0.875rem;
   display: block;
-  padding: 0.3rem 0.5rem;
+  padding: 0.35rem 0.5rem;
   border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .sidebar-menu a:hover,
@@ -179,7 +187,7 @@ footer.site-footer { grid-area: foot; }
 .hours-list {
   list-style: none;
   font-size: 0.825rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .hours-list li {
@@ -189,7 +197,7 @@ footer.site-footer { grid-area: foot; }
 }
 
 /* ---------------------------------------------------------
-   Main Content & Hero Banner
+   Main Content & Hero Banner (Module 4-5 Deep Blue Hero)
    --------------------------------------------------------- */
 .hero-banner {
   display: flex;
@@ -197,12 +205,13 @@ footer.site-footer { grid-area: foot; }
   align-items: center;
   text-align: center;
   min-height: 200px;
-  background: linear-gradient(rgba(30, 64, 175, 0.85), rgba(30, 58, 138, 0.85)), 
+  background: linear-gradient(rgba(30, 58, 138, 0.88), rgba(29, 78, 216, 0.88)), 
               url('https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSXr38FRH6d55lrpN63pYmIkYe4IdcL8TpTgEYe7dC8ztGCRcKCKUqySJoMAagNiei5Db3HohfG0zk5iw0') center/cover;
   color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.2);
 }
 
 .hero-banner h2 {
@@ -212,7 +221,7 @@ footer.site-footer { grid-area: foot; }
 
 .hero-banner p {
   font-size: 0.95rem;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .barista-spotlight {
@@ -225,12 +234,12 @@ footer.site-footer { grid-area: foot; }
 
 .barista-spotlight h3 {
   font-size: 1rem;
-  color: var(--brand-dark);
+  color: var(--brand);
   margin-bottom: 0.25rem;
 }
 
 /* ---------------------------------------------------------
-   Module 6.4 Place Grid (Flexible side-by-side cards)
+   Module 6.4 Place Grid (Classic Blue Product Cards)
    --------------------------------------------------------- */
 .place-grid {
   display: flex;
@@ -240,8 +249,8 @@ footer.site-footer { grid-area: foot; }
 
 .place-card {
   flex: 1 1 240px;
-  background: #ffffff;
-  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -252,8 +261,8 @@ footer.site-footer { grid-area: foot; }
 }
 
 .place-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 12px -2px rgba(30, 64, 175, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.15);
 }
 
 .badge {
@@ -262,7 +271,7 @@ footer.site-footer { grid-area: foot; }
   left: 10px;
   background: var(--brand);
   color: #ffffff;
-  padding: 0.2rem 0.5rem;
+  padding: 0.25rem 0.55rem;
   font-size: 0.75rem;
   font-weight: bold;
   border-radius: 4px;
@@ -275,7 +284,7 @@ footer.site-footer { grid-area: foot; }
 }
 
 .card-body {
-  padding: 1rem;
+  padding: 1.1rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -285,7 +294,7 @@ footer.site-footer { grid-area: foot; }
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-bottom: 0.4rem;
 }
 
@@ -296,12 +305,12 @@ footer.site-footer { grid-area: foot; }
 .card-body h3 {
   font-size: 1.1rem;
   margin-bottom: 0.4rem;
-  color: var(--text-dark);
+  color: var(--text-primary);
 }
 
 .card-description {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   line-height: 1.4;
   margin-bottom: 0.75rem;
 }
@@ -309,7 +318,7 @@ footer.site-footer { grid-area: foot; }
 .place-info-list {
   list-style: none;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .place-info-list li {
@@ -317,16 +326,16 @@ footer.site-footer { grid-area: foot; }
 }
 
 .card-footer {
-  padding: 0.85rem 1rem;
-  background: var(--bg-light);
-  border-top: 1px solid var(--border-color);
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-page);
+  border-top: 1px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .product-price {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--brand);
 }
@@ -334,23 +343,24 @@ footer.site-footer { grid-area: foot; }
 .btn-order {
   background: var(--brand);
   color: #ffffff;
-  padding: 0.45rem 0.85rem;
+  padding: 0.5rem 0.9rem;
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.825rem;
   font-weight: 600;
+  transition: background 0.2s ease;
 }
 
 .btn-order:hover {
-  background: var(--brand-dark);
+  background: var(--brand-hover);
 }
 
 footer.site-footer {
   text-align: center;
   padding: 1.5rem 1rem;
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
   border-radius: 8px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 0.85rem;
 }
