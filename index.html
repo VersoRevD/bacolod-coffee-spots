@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Module 7.2 Requirement: Viewport Meta Tag -->
+  <!-- Module 7.4 Requirement: Viewport Meta Tag for Phone Responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bacolod Coffee Beans Shop | Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Module 7.1 Grid Skeleton Outer Container -->
+  <!-- Module 7.3 & 7.4 Grid Page Skeleton Wrapper -->
   <div class="page">
 
     <!-- Header / Masthead Region (grid-area: masthead) -->
@@ -24,10 +24,10 @@
       </nav>
     </header>
 
-    <!-- Module 7.1 Requirement: Sidebar Region (grid-area: side) -->
+    <!-- Module 7.3 Sidebar Region (grid-area: side) -->
     <aside class="site-sidebar">
       
-      <!-- Widget 1: Categories -->
+      <!-- Category Filter Widget -->
       <div class="sidebar-widget">
         <h3>Categories</h3>
         <ul class="sidebar-menu">
@@ -38,7 +38,7 @@
         </ul>
       </div>
 
-      <!-- Widget 2: Store Hours -->
+      <!-- Store Hours Widget -->
       <div class="sidebar-widget">
         <h3>Store Hours</h3>
         <ul class="hours-list">
@@ -47,17 +47,17 @@
         </ul>
       </div>
 
-      <!-- Widget 3: Why Shop Local -->
+      <!-- Quick Info Widget -->
       <div class="sidebar-widget">
         <h3>Why Local Beans?</h3>
-        <p style="font-size: 0.8rem; color: var(--text-muted);">
-          100% of our beans are ethically sourced from Negrense farming cooperatives around Mt. Kanlaon.
+        <p style="font-size: 0.8rem; color: var(--text-secondary);">
+          100% of our beans are ethically sourced directly from Negrense farming cooperatives surrounding Mt. Kanlaon.
         </p>
       </div>
 
     </aside>
 
-    <!-- Main Region (grid-area: main) -->
+    <!-- Main Content Region (grid-area: main) -->
     <main class="site-main">
 
       <!-- Slice of Life Banner -->
@@ -74,15 +74,15 @@
         </div>
       </section>
 
-      <!-- Barista Recommendation -->
+      <!-- Barista Recommendation Spotlight -->
       <section class="barista-spotlight">
         <h3>☕ Today's Barista Recommendation</h3>
         <p><em>"If you're brewing with a V60 or Aeropress today, try the <strong>Origami House Blend</strong>. The current batch roasted on Tuesday has exceptional citrus sweetness!"</em> — <strong>Kuya Mark, Head Roaster</strong></p>
       </section>
 
-      <h2 style="margin-bottom: 1rem; color: var(--brand);">Featured Products</h2>
+      <h2 style="margin-bottom: 1rem; color: var(--brand);">Featured Coffee Beans</h2>
 
-      <!-- Module 6.4 Flexible Card Grid -->
+      <!-- Module 6.4 Place Grid Container -->
       <div class="place-grid">
 
         <!-- Product 1: Origami Coffee -->
@@ -110,7 +110,7 @@
 
         <!-- Product 2: Coffee Culture -->
         <article class="place-card">
-          <span class="badge" style="background: #2563eb;">Direct Trade</span>
+          <span class="badge">Direct Trade</span>
           <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSXr38FRH6d55lrpN63pYmIkYe4IdcL8TpTgEYe7dC8ztGCRcKCKUqySJoMAagNiei5Db3HohfG0zk5iw0" alt="Pour Over Specialty Coffee" class="card-media">
           <div class="card-body">
             <div class="product-meta">
@@ -133,7 +133,7 @@
 
         <!-- Product 3: Kubo Coffee -->
         <article class="place-card">
-          <span class="badge" style="background: #059669;">Native Harvest</span>
+          <span class="badge">Native Harvest</span>
           <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5ofCJippeBuazUijqDkadVUtvqYTCMYLw3QPYOT1Bn7w69hZLhR8mObi0wEnjTZtbNo4eZj4AnkRYw-g" alt="Specialty Coffee Bean Bag" class="card-media">
           <div class="card-body">
             <div class="product-meta">
