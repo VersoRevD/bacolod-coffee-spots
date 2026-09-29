@@ -2,134 +2,166 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Module 7.2 Requirement: Viewport Meta Tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bacolod Coffee Beans Shop | Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Slice of Life Banner -->
-  <div class="store-status-bar">
-    <span><span class="status-dot"></span> <strong>Bacolod Roastery Status:</strong> Open Today (7:00 AM – 9:00 PM)</span>
-    <span>🚚 Free local shipping on orders over ₱1,200</span>
+  <!-- Module 7.1 Grid Skeleton Outer Container -->
+  <div class="page">
+
+    <!-- Header / Masthead Region (grid-area: masthead) -->
+    <header class="site-header">
+      <h1>Bacolod Coffee Shop</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Shop Home</a></li>
+          <li><a href="about.html">About Store</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Module 7.1 Requirement: Sidebar Region (grid-area: side) -->
+    <aside class="site-sidebar">
+      
+      <!-- Widget 1: Categories -->
+      <div class="sidebar-widget">
+        <h3>Categories</h3>
+        <ul class="sidebar-menu">
+          <li><a href="#" class="active">All Coffee Beans</a></li>
+          <li><a href="#">Medium Roasts</a></li>
+          <li><a href="#">Dark Roasts</a></li>
+          <li><a href="#">Cold Brew Packs</a></li>
+        </ul>
+      </div>
+
+      <!-- Widget 2: Store Hours -->
+      <div class="sidebar-widget">
+        <h3>Store Hours</h3>
+        <ul class="hours-list">
+          <li><span>Mon - Fri:</span> <strong>7:00 AM - 8:00 PM</strong></li>
+          <li><span>Sat - Sun:</span> <strong>8:00 AM - 9:00 PM</strong></li>
+        </ul>
+      </div>
+
+      <!-- Widget 3: Why Shop Local -->
+      <div class="sidebar-widget">
+        <h3>Why Local Beans?</h3>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+          100% of our beans are ethically sourced from Negrense farming cooperatives around Mt. Kanlaon.
+        </p>
+      </div>
+
+    </aside>
+
+    <!-- Main Region (grid-area: main) -->
+    <main class="site-main">
+
+      <!-- Slice of Life Banner -->
+      <div class="store-status-bar">
+        <span><span class="status-dot"></span> <strong>Bacolod Roastery Status:</strong> Open Today</span>
+        <span>🚚 Free local shipping on orders over ₱1,200</span>
+      </div>
+
+      <!-- Centered Banner -->
+      <section class="hero-banner">
+        <div>
+          <h2>Freshly Roasted Beans Store</h2>
+          <p>Order premium whole beans and ground roasts directly from local Negrense farms.</p>
+        </div>
+      </section>
+
+      <!-- Barista Recommendation -->
+      <section class="barista-spotlight">
+        <h3>☕ Today's Barista Recommendation</h3>
+        <p><em>"If you're brewing with a V60 or Aeropress today, try the <strong>Origami House Blend</strong>. The current batch roasted on Tuesday has exceptional citrus sweetness!"</em> — <strong>Kuya Mark, Head Roaster</strong></p>
+      </section>
+
+      <h2 style="margin-bottom: 1rem; color: var(--brand);">Featured Products</h2>
+
+      <!-- Module 6.4 Flexible Card Grid -->
+      <div class="place-grid">
+
+        <!-- Product 1: Origami Coffee -->
+        <article class="place-card">
+          <span class="badge">Best Seller</span>
+          <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTKErhD_lZYt5mwmhdoOpvLnUDVeOPHD31VZLLj--kBeYICqxIZdjiNIbFVpuo2h_ECjCEZBaNLxwsL_MY" alt="Origami Coffee House Shop" class="card-media">
+          <div class="card-body">
+            <div class="product-meta">
+              <span>🔥 Medium Roast</span>
+              <span class="rating">★ 4.9 (48)</span>
+            </div>
+            <h3>Origami Coffee House Blend (250g)</h3>
+            <p class="card-description">Precision-roasted specialty blend featuring balanced notes of milk chocolate, roasted hazelnut, and sweet citrus finish.</p>
+            <ul class="place-info-list">
+              <li>🌱 <strong>Origin:</strong> Mt. Kanlaon, Negros Occidental</li>
+              <li>🔥 <strong>Roast Level:</strong> Medium Roast</li>
+              <li>📦 <strong>In Stock:</strong> Available for Instant Shipping</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="product-price">₱450.00</div>
+            <a href="products/origami-coffee.html" class="btn-order">View Details &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Product 2: Coffee Culture -->
+        <article class="place-card">
+          <span class="badge" style="background: #2563eb;">Direct Trade</span>
+          <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSXr38FRH6d55lrpN63pYmIkYe4IdcL8TpTgEYe7dC8ztGCRcKCKUqySJoMAagNiei5Db3HohfG0zk5iw0" alt="Pour Over Specialty Coffee" class="card-media">
+          <div class="card-body">
+            <div class="product-meta">
+              <span>🔥 Dark Roast</span>
+              <span class="rating">★ 5.0 (32)</span>
+            </div>
+            <h3>Mt. Kanlaon Dark Roast (250g)</h3>
+            <p class="card-description">Bold, rich single-origin beans grown in volcanic soil with deep dark cacao flavors and caramelized sweetness.</p>
+            <ul class="place-info-list">
+              <li>🌱 <strong>Origin:</strong> Mt. Kanlaon High Elevation</li>
+              <li>🔥 <strong>Roast Level:</strong> Dark Roast</li>
+              <li>📦 <strong>In Stock:</strong> 15 Bags Remaining</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="product-price">₱480.00</div>
+            <a href="products/coffee-culture.html" class="btn-order">View Details &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Product 3: Kubo Coffee -->
+        <article class="place-card">
+          <span class="badge" style="background: #059669;">Native Harvest</span>
+          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5ofCJippeBuazUijqDkadVUtvqYTCMYLw3QPYOT1Bn7w69hZLhR8mObi0wEnjTZtbNo4eZj4AnkRYw-g" alt="Specialty Coffee Bean Bag" class="card-media">
+          <div class="card-body">
+            <div class="product-meta">
+              <span>🔥 Medium-Dark Roast</span>
+              <span class="rating">★ 4.8 (19)</span>
+            </div>
+            <h3>Muscovado Cold Brew Filter Pack</h3>
+            <p class="card-description">Pre-portioned artisan filter packs infused with natural Bacolod Muscovado sugar for effortless steep brew at home.</p>
+            <ul class="place-info-list">
+              <li>🌱 <strong>Origin:</strong> Local Negros Farm Harvest</li>
+              <li>🔥 <strong>Roast Level:</strong> Medium-Dark Roast</li>
+              <li>📦 <strong>In Stock:</strong> Ready to Ship</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="product-price">₱380.00</div>
+            <a href="products/kubo-coffee.html" class="btn-order">View Details &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Footer Region (grid-area: foot) -->
+    <footer class="site-footer">
+      <p>&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Beans Shop</p>
+    </footer>
+
   </div>
-
-  <!-- Module 6.3 Flexbox Site Header (Exactly 2 direct children: h1 and nav) -->
-  <header class="site-header">
-    <h1>Bacolod Coffee Shop</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Shop Home</a></li>
-        <li><a href="about.html">About Store</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Module 6.3 Centered Banner (Horizontal & Vertical Centering via Lesson 6.4) -->
-    <section class="hero-banner">
-      <div>
-        <h2>Freshly Roasted Beans Store</h2>
-        <p>Order premium whole beans and ground roasts directly from local Negrense farms.</p>
-      </div>
-    </section>
-
-    <!-- Slice of Life Barista Recommendation -->
-    <section class="barista-spotlight">
-      <h3>☕ Today's Barista Recommendation</h3>
-      <p><em>"If you're brewing with a V60 or Aeropress today, try the <strong>Origami House Blend</strong>. The current batch roasted on Tuesday has exceptional citrus sweetness!"</em> — <strong>Kuya Mark, Head Roaster</strong></p>
-    </section>
-
-    <!-- Shop Controls Header -->
-    <div class="shop-controls">
-      <h2>Featured Products</h2>
-      <div class="filter-pills">
-        <span class="pill active">All Roasts</span>
-        <span class="pill">Medium Roast</span>
-        <span class="pill">Dark Roast</span>
-        <span class="pill">Drip Packs</span>
-      </div>
-    </div>
-
-    <!-- Module 6.4 Place Grid Container (Side-by-Side Flex Layout) -->
-    <div class="place-grid">
-
-      <!-- Product 1: Origami Coffee -->
-      <article class="place-card">
-        <span class="badge">Best Seller</span>
-        <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTKErhD_lZYt5mwmhdoOpvLnUDVeOPHD31VZLLj--kBeYICqxIZdjiNIbFVpuo2h_ECjCEZBaNLxwsL_MY" alt="Origami Coffee House Shop" class="card-media">
-        <div class="card-body">
-          <div class="product-meta">
-            <span>🔥 Medium Roast</span>
-            <span class="rating">★ 4.9 (48)</span>
-          </div>
-          <h3>Origami Coffee House Blend (250g)</h3>
-          <p class="card-description">Precision-roasted specialty blend featuring balanced notes of milk chocolate, roasted hazelnut, and sweet citrus finish.</p>
-          <ul class="place-info-list">
-            <li>🌱 <strong>Origin:</strong> Mt. Kanlaon, Negros Occidental</li>
-            <li>🔥 <strong>Roast Level:</strong> Medium Roast</li>
-            <li>📦 <strong>In Stock:</strong> Available for Instant Shipping</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <div class="product-price">₱450.00</div>
-          <a href="products/origami-coffee.html" class="btn-order">View Details &amp; Place Order &rarr;</a>
-        </div>
-      </article>
-
-      <!-- Product 2: Coffee Culture -->
-      <article class="place-card">
-        <span class="badge" style="background: #2b6cb0;">Direct Trade</span>
-        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSXr38FRH6d55lrpN63pYmIkYe4IdcL8TpTgEYe7dC8ztGCRcKCKUqySJoMAagNiei5Db3HohfG0zk5iw0" alt="Pour Over Specialty Coffee" class="card-media">
-        <div class="card-body">
-          <div class="product-meta">
-            <span>🔥 Dark Roast</span>
-            <span class="rating">★ 5.0 (32)</span>
-          </div>
-          <h3>Mt. Kanlaon Dark Roast (250g)</h3>
-          <p class="card-description">Bold, rich single-origin beans grown in volcanic soil with deep dark cacao flavors and caramelized sweetness.</p>
-          <ul class="place-info-list">
-            <li>🌱 <strong>Origin:</strong> Mt. Kanlaon High Elevation</li>
-            <li>🔥 <strong>Roast Level:</strong> Dark Roast</li>
-            <li>📦 <strong>In Stock:</strong> 15 Bags Remaining</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <div class="product-price">₱480.00</div>
-          <a href="products/coffee-culture.html" class="btn-order">View Details &amp; Place Order &rarr;</a>
-        </div>
-      </article>
-
-      <!-- Product 3: Kubo Coffee -->
-      <article class="place-card">
-        <span class="badge" style="background: #2f855a;">Native Harvest</span>
-        <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5ofCJippeBuazUijqDkadVUtvqYTCMYLw3QPYOT1Bn7w69hZLhR8mObi0wEnjTZtbNo4eZj4AnkRYw-g" alt="Specialty Coffee Bean Bag" class="card-media">
-        <div class="card-body">
-          <div class="product-meta">
-            <span>🔥 Medium-Dark Roast</span>
-            <span class="rating">★ 4.8 (19)</span>
-          </div>
-          <h3>Muscovado Cold Brew Filter Pack</h3>
-          <p class="card-description">Pre-portioned artisan filter packs infused with natural Bacolod Muscovado sugar for effortless steep brew at home.</p>
-          <ul class="place-info-list">
-            <li>🌱 <strong>Origin:</strong> Local Negros Farm Harvest</li>
-            <li>🔥 <strong>Roast Level:</strong> Medium-Dark Roast</li>
-            <li>📦 <strong>In Stock:</strong> Ready to Ship</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <div class="product-price">₱380.00</div>
-          <a href="products/kubo-coffee.html" class="btn-order">View Details &amp; Place Order &rarr;</a>
-        </div>
-      </article>
-
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Beans Shop</p>
-  </footer>
-
 </body>
 </html>
