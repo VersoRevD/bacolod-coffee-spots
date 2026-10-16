@@ -3,332 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Origami Coffee House Blend | Bacolod Coffee Shop</title>
-  <style>
-    /* =========================================================
-       Product Detail Page Styles - Compact & Centered Layout
-       ========================================================= */
-
-    :root {
-      --brand: #1e3a8a;           /* Classic Deep Navy Blue */
-      --brand-hover: #1d4ed8;     /* Bright Accent Blue */
-      --brand-light: #dbeafe;     /* Light Blue Tint */
-      --bg-page: #f8fafc;         /* Page Background */
-      --card-bg: #ffffff;         /* Container Background */
-      --text-primary: #1e293b;    /* Dark Charcoal Text */
-      --text-secondary: #475569;  /* Muted Slate Text */
-      --border-light: #e2e8f0;    /* Soft Gray Border */
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      line-height: 1.5;
-      background-color: var(--bg-page);
-      color: var(--text-primary);
-    }
-
-    /* Max-width constraint keeps content compact and centered */
-    .detail-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    /* Site Header */
-    .site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: var(--card-bg);
-      padding: 0.85rem 1.25rem;
-      border: 1px solid var(--border-light);
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    }
-
-    .site-header h1 {
-      font-size: 1.2rem;
-      color: var(--brand);
-    }
-
-    .site-header nav ul {
-      display: flex;
-      gap: 16px;
-      list-style: none;
-    }
-
-    .site-header nav a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-weight: 600;
-      font-size: 0.875rem;
-    }
-
-    .site-header nav a:hover {
-      color: var(--brand-hover);
-    }
-
-    /* Back Link Breadcrumb */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      color: var(--brand);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.875rem;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Product Detail Card */
-    .product-detail-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-light);
-      border-radius: 8px;
-      padding: 1.25rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-
-    @media (min-width: 640px) {
-      .product-detail-card {
-        grid-template-columns: 320px 1fr; /* Controls image column size */
-        align-items: start;
-      }
-    }
-
-    /* Product Image Frame */
-    .product-media-container {
-      width: 100%;
-      height: 260px;
-      border-radius: 6px;
-      overflow: hidden;
-      border: 1px solid var(--border-light);
-    }
-
-    .product-media-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Product Details Column */
-    .product-info {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .badge-bar {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .badge {
-      background: var(--brand);
-      color: #ffffff;
-      padding: 0.2rem 0.5rem;
-      font-size: 0.75rem;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-
-    .rating {
-      color: #d97706;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .product-info h2 {
-      font-size: 1.4rem;
-      color: var(--text-primary);
-      line-height: 1.25;
-    }
-
-    .price-tag {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--brand);
-    }
-
-    .product-description {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    /* Spec List */
-    .spec-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-      margin-top: 0.25rem;
-    }
-
-    .spec-table tr {
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .spec-table tr:last-child {
-      border-bottom: none;
-    }
-
-    .spec-table td {
-      padding: 0.4rem 0;
-    }
-
-    .spec-table td:first-child {
-      color: var(--text-secondary);
-      font-weight: 600;
-      width: 40%;
-    }
-
-    /* Order / Action Section */
-    .action-box {
-      margin-top: 0.5rem;
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--brand);
-      color: #ffffff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-      display: inline-block;
-      text-align: center;
-      transition: background 0.2s ease;
-    }
-
-    .btn-primary:hover {
-      background: var(--brand-hover);
-    }
-
-    .btn-secondary {
-      background: var(--brand-light);
-      color: var(--brand);
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-      display: inline-block;
-      text-align: center;
-    }
-
-    /* Footer */
-    footer.site-footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-light);
-      border-radius: 8px;
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-    }
-  </style>
+  <title>Origami Coffee House Blend | Details & Order</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-  <div class="detail-container">
+  <div class="detail-container" style="max-width: 900px; margin: 0 auto; padding: 1.25rem;">
 
-    <!-- Header Navigation -->
-    <header class="site-header">
-      <h1>Bacolod Coffee Shop</h1>
+    <!-- Site Header -->
+    <header class="site-header" style="display: flex; justify-content: space-between; align-items: center; background-color: #fff; padding: 0.85rem 1.25rem; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 1rem;">
+      <h1 id="brand-title" style="font-size: 1.2rem; color: #1e3a8a;">Bacolod Coffee Shop</h1>
       <nav>
-        <ul>
-          <li><a href="../index.html">Shop Home</a></li>
-          <li><a href="../about.html">About Store</a></li>
-          <li><a href="../contact.html">Contact</a></li>
+        <ul style="display: flex; gap: 16px; list-style: none;">
+          <li><a href="../index.html" style="text-decoration: none; color: #475569; font-weight: 600;">Shop Home</a></li>
+          <li><a href="../about.html" style="text-decoration: none; color: #475569; font-weight: 600;">About Store</a></li>
+          <li><a href="../contact.html" style="text-decoration: none; color: #475569; font-weight: 600;">Contact Us</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Navigation Link -->
     <div>
-      <a href="../index.html" class="back-link">&larr; Back to Products</a>
+      <a href="../index.html" style="color: #1e3a8a; font-weight: 600; text-decoration: none;">&larr; Back to Shop Home</a>
     </div>
 
-    <!-- Product Detail Layout (Grid Container) -->
-    <article class="product-detail-card">
-      
-      <!-- Compact Image Container -->
-      <div class="product-media-container">
-        <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTKErhD_lZYt5mwmhdoOpvLnUDVeOPHD31VZLLj--kBeYICqxIZdjiNIbFVpuo2h_ECjCEZBaNLxwsL_MY" alt="Origami Coffee House Blend">
-      </div>
-
-      <!-- Compact Content Container -->
-      <div class="product-info">
-        <div class="badge-bar">
-          <span class="badge">Best Seller</span>
-          <span class="rating">★ 4.9 (48 customer reviews)</span>
-        </div>
-
-        <h2>Origami Coffee House Blend (250g)</h2>
-        <div class="price-tag">₱450.00</div>
-
-        <p class="product-description">
-          Precision-roasted specialty blend featuring balanced notes of milk chocolate, roasted hazelnut, and a sweet citrus finish. Grown sustainably along the slopes of Mt. Kanlaon.
-        </p>
-
-        <!-- Specifications Table -->
-        <table class="spec-table">
-          <tr>
-            <td>Origin</td>
-            <td>Mt. Kanlaon, Negros Occidental</td>
-          </tr>
-          <tr>
-            <td>Roast Level</td>
-            <td>Medium Roast</td>
-          </tr>
-          <tr>
-            <td>Flavor Profile</td>
-            <td>Milk Chocolate, Hazelnut, Citrus</td>
-          </tr>
-          <tr>
-            <td>Recommended Brew</td>
-            <td>V60, Aeropress, French Press</td>
-          </tr>
-          <tr>
-            <td>Availability</td>
-            <td>In Stock (Fresh Roast)</td>
-          </tr>
-        </table>
-
-        <!-- Order Options -->
-        <div class="action-box">
-          <a href="#" class="btn-primary">Add to Cart</a>
-          <a href="../index.html" class="btn-secondary">Continue Shopping</a>
+    <!-- Main Detail Card -->
+    <article class="place-card" style="margin-top: 1rem; background: #fff; padding: 1.25rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+      <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+        <img 
+          src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTKErhD_lZYt5mwmhdoOpvLnUDVeOPHD31VZLLj--kBeYICqxIZdjiNIbFVpuo2h_ECjCEZBaNLxwsL_MY" 
+          alt="Origami House Blend Beans" 
+          style="width: 100%; max-width: 300px; height: 220px; object-fit: cover; border-radius: 6px;"
+        >
+        <div style="flex: 1; min-width: 250px;">
+          <h2 style="color: #1e3a8a; margin-bottom: 0.5rem;">Origami Coffee House Blend (250g)</h2>
+          <div style="font-size: 1.3rem; font-weight: bold; color: #1e3a8a; margin-bottom: 0.5rem;">₱450.00</div>
+          <p style="color: #475569; font-size: 0.9rem; margin-bottom: 1rem;">Our flagship medium roast blend roasted specifically for pour-over precision brewing. Delivers a clean cup with low acidity and rich aroma.</p>
+          
+          <ul style="list-style: none; font-size: 0.85rem; color: #475569; margin-bottom: 1rem;">
+            <li>🌱 <strong>Origin:</strong> Mt. Kanlaon, Negros Occidental (100% Arabica)</li>
+            <li>🔥 <strong>Roast Profile:</strong> Medium Roast (Milk Chocolate, Toasted Hazelnut)</li>
+            <li>📍 <strong>Roastery Location:</strong> 17th Lacson St., Bacolod City</li>
+          </ul>
         </div>
       </div>
-
     </article>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <p>&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Beans Shop</p>
+    <!-- Order Form -->
+    <form action="#" method="post" style="margin-top: 1.5rem; background: #fff; padding: 1.25rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+      <fieldset style="border: none;">
+        <legend style="font-weight: bold; color: #1e3a8a; font-size: 1.1rem; margin-bottom: 1rem;">Place Coffee Beans Order / Inquiry</legend>
+
+        <label style="display: block; margin-bottom: 0.25rem; font-size: 0.85rem;">Full Name *</label>
+        <input type="text" name="name" required placeholder="e.g. Juan dela Cruz" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+        <label style="display: block; margin-bottom: 0.25rem; font-size: 0.85rem;">Email Address *</label>
+        <input type="email" name="email" required placeholder="e.g. juan@example.com" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+        <label style="display: block; margin-bottom: 0.25rem; font-size: 0.85rem;">Select Grind Size *</label>
+        <select name="grind" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #cbd5e1; border-radius: 4px;">
+          <option value="whole">Whole Bean (Unground)</option>
+          <option value="coarse">Coarse (French Press / Cold Brew)</option>
+          <option value="medium">Medium (Pour-over / Drip)</option>
+          <option value="fine">Fine (Espresso)</option>
+        </select>
+
+        <button type="submit" style="background: #1e3a8a; color: #fff; padding: 0.6rem 1.2rem; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Complete Order Inquiry</button>
+      </fieldset>
+    </form>
+
+    <footer class="site-footer" style="text-align: center; padding: 1rem; margin-top: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; color: #475569; font-size: 0.85rem;">
+      <p id="copyright-notice">&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Beans Shop</p>
     </footer>
 
   </div>
 
+  <!-- Sub-folder Script Import -->
+  <script src="../script.js"></script>
 </body>
 </html>
