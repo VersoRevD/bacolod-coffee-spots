@@ -1,50 +1,58 @@
 /* =========================================================
-   Module 8.1 JavaScript - Bacolod Coffee Beans Shop
+   Module 8.2 JavaScript - Bacolod Coffee Beans Shop
    ========================================================= */
 
-// 1. Declare constants and running counter
+// 1. Declare constants and running total
 const shopName = "Bacolod Coffee Shop";
-const currentYear = new Date().getFullYear(); // Dynamic year
-let cartItemCount = 0;
+const currentYear = new Date().getFullYear(); // Dynamic year (2026)
+let runningTotal = 0;
 
-// Data array for calculated store metrics
-const productReviews = [
-  { name: "Origami Blend", rating: 4.9, stockBags: 25 },
-  { name: "Kanlaon Dark", rating: 5.0, stockBags: 15 },
-  { name: "Muscovado Pack", rating: 4.8, stockBags: 30 }
+// Product dataset for dynamic shop calculations
+const shopProducts = [
+  { id: "origami", name: "Origami House Blend (250g)", price: 450, stock: 25 },
+  { id: "kanlaon", name: "Mt. Kanlaon Dark Roast (250g)", price: 480, stock: 15 },
+  { id: "muscovado", name: "Muscovado Cold Brew Pack", price: 380, stock: 30 }
 ];
 
-// 2. Computed values using JavaScript
-const totalProducts = productReviews.length;
-const totalStock = productReviews.reduce((sum, item) => sum + item.stockBags, 0);
-const avgRating = (
-  productReviews.reduce((sum, item) => sum + item.rating, 0) / totalProducts
-).toFixed(1);
+// 2. Perform genuine JavaScript calculations
+const totalProducts = shopProducts.length;
 
-// 3. Log at least three labelled values to browser console
-console.log("Store Name:", shopName);
-console.log("Current System Year:", currentYear);
-console.log("Total Roasted Coffee Products:", totalProducts);
-console.log("Total Bags in Stock:", totalStock);
-console.log("Calculated Store Average Rating:", avgRating);
+// Calculate total inventory valuation using array reduction
+const totalCatalogValue = shopProducts.reduce((sum, item) => sum + (item.price * item.stock), 0);
 
-// 4. DOM Manipulation on page load
+// Calculate average price per bag
+const averagePrice = (
+  shopProducts.reduce((sum, item) => sum + item.price, 0) / totalProducts
+).toFixed(2);
+
+// Add default item price to the running total
+runningTotal += shopProducts[0].price;
+
+// 3. Log at least three labelled values to the console
+console.log('Shop Name:', shopName);
+console.log('Current Year:', currentYear);
+console.log('Total Products in Catalog:', totalProducts);
+console.log('Average Bean Price (PHP):', averagePrice);
+console.log('Total Estimated Inventory Value (PHP):', totalCatalogValue);
+console.log('Initial Cart Running Total (PHP):', runningTotal);
+
+// 4. Update DOM elements dynamically on load
 document.addEventListener("DOMContentLoaded", () => {
-  // Populate Shop Name
+  // Update Shop Name
   const brandTitleElem = document.getElementById("brand-title");
   if (brandTitleElem) {
     brandTitleElem.textContent = shopName;
   }
 
-  // Populate Dynamic Copyright Line
+  // Update Dynamic Copyright Line in Footer
   const footerElem = document.getElementById("copyright-notice");
   if (footerElem) {
     footerElem.textContent = `© ${currentYear} Vincent Rev D. Verso | ${shopName}`;
   }
 
-  // Populate JavaScript Calculated Metrics
-  const computedStatsElem = document.getElementById("computed-stats");
+  // Render Genuine Computed Value onto Page
+  const computedStatsElem = document.getElementById("shop-computed-val");
   if (computedStatsElem) {
-    computedStatsElem.textContent = `★ ${avgRating} Avg Rating across ${totalProducts} Direct-Farm Roasts (${totalStock} bags ready to ship)`;
+    computedStatsElem.textContent = `Catalog Overview: ${totalProducts} Premium Coffee Bags Available • Average Price: ₱${averagePrice} • Total Store Stock Valuation: ₱${totalCatalogValue.toLocaleString()}.00`;
   }
 });
