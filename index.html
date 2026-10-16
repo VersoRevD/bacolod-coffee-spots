@@ -2,19 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Module 7.4 Requirement: Viewport Meta Tag for Phone Responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bacolod Coffee Beans Shop | Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Module 7.3 & 7.4 Grid Page Skeleton Wrapper -->
   <div class="page">
 
-    <!-- Header / Masthead Region (grid-area: masthead) -->
+    <!-- Header Region -->
     <header class="site-header">
-      <h1>Bacolod Coffee Shop</h1>
+      <h1 id="brand-title">Bacolod Coffee Shop</h1>
       <nav>
         <ul>
           <li><a href="index.html" class="active">Shop Home</a></li>
@@ -24,10 +22,8 @@
       </nav>
     </header>
 
-    <!-- Module 7.3 Sidebar Region (grid-area: side) -->
+    <!-- Sidebar Region -->
     <aside class="site-sidebar">
-      
-      <!-- Category Filter Widget -->
       <div class="sidebar-widget">
         <h3>Categories</h3>
         <ul class="sidebar-menu">
@@ -38,7 +34,6 @@
         </ul>
       </div>
 
-      <!-- Store Hours Widget -->
       <div class="sidebar-widget">
         <h3>Store Hours</h3>
         <ul class="hours-list">
@@ -47,26 +42,23 @@
         </ul>
       </div>
 
-      <!-- Quick Info Widget -->
       <div class="sidebar-widget">
         <h3>Why Local Beans?</h3>
         <p style="font-size: 0.8rem; color: var(--text-secondary);">
-          100% of our beans are ethically sourced directly from Negrense farming cooperatives surrounding Mt. Kanlaon.
+          100% ethically sourced from Negrense farming cooperatives around Mt. Kanlaon.
         </p>
       </div>
-
     </aside>
 
-    <!-- Main Content Region (grid-area: main) -->
+    <!-- Main Content Region -->
     <main class="site-main">
 
-      <!-- Slice of Life Banner -->
       <div class="store-status-bar">
         <span><span class="status-dot"></span> <strong>Bacolod Roastery Status:</strong> Open Today</span>
         <span>🚚 Free local shipping on orders over ₱1,200</span>
       </div>
 
-      <!-- Centered Banner -->
+      <!-- Hero Banner -->
       <section class="hero-banner">
         <div>
           <h2>Freshly Roasted Beans Store</h2>
@@ -74,18 +66,18 @@
         </div>
       </section>
 
-      <!-- Barista Recommendation Spotlight -->
+      <!-- Barista Spotlight & JS Computed Stat Banner -->
       <section class="barista-spotlight">
-        <h3>☕ Today's Barista Recommendation</h3>
-        <p><em>"If you're brewing with a V60 or Aeropress today, try the <strong>Origami House Blend</strong>. The current batch roasted on Tuesday has exceptional citrus sweetness!"</em> — <strong>Kuya Mark, Head Roaster</strong></p>
+        <h3>☕ Live Store Metrics (Computed via JS)</h3>
+        <p id="computed-stats">Loading computed store metrics...</p>
       </section>
 
       <h2 style="margin-bottom: 1rem; color: var(--brand);">Featured Coffee Beans</h2>
 
-      <!-- Module 6.4 Place Grid Container -->
+      <!-- Place Grid Container -->
       <div class="place-grid">
 
-        <!-- Product 1: Origami Coffee -->
+        <!-- Product 1 -->
         <article class="place-card">
           <span class="badge">Best Seller</span>
           <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTKErhD_lZYt5mwmhdoOpvLnUDVeOPHD31VZLLj--kBeYICqxIZdjiNIbFVpuo2h_ECjCEZBaNLxwsL_MY" alt="Origami Coffee House Shop" class="card-media">
@@ -108,7 +100,7 @@
           </div>
         </article>
 
-        <!-- Product 2: Coffee Culture -->
+        <!-- Product 2 -->
         <article class="place-card">
           <span class="badge">Direct Trade</span>
           <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSXr38FRH6d55lrpN63pYmIkYe4IdcL8TpTgEYe7dC8ztGCRcKCKUqySJoMAagNiei5Db3HohfG0zk5iw0" alt="Pour Over Specialty Coffee" class="card-media">
@@ -131,7 +123,7 @@
           </div>
         </article>
 
-        <!-- Product 3: Kubo Coffee -->
+        <!-- Product 3 -->
         <article class="place-card">
           <span class="badge">Native Harvest</span>
           <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5ofCJippeBuazUijqDkadVUtvqYTCMYLw3QPYOT1Bn7w69hZLhR8mObi0wEnjTZtbNo4eZj4AnkRYw-g" alt="Specialty Coffee Bean Bag" class="card-media">
@@ -157,11 +149,14 @@
       </div>
     </main>
 
-    <!-- Footer Region (grid-area: foot) -->
+    <!-- Footer Region -->
     <footer class="site-footer">
-      <p>&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Beans Shop</p>
+      <p id="copyright-notice">&copy; 2026 Vincent Rev D. Verso | Bacolod Coffee Beans Shop</p>
     </footer>
 
   </div>
+
+  <!-- Module 8.1 Script Import -->
+  <script src="script.js"></script>
 </body>
 </html>
